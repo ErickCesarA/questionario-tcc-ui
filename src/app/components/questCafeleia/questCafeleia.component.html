@@ -1,0 +1,95 @@
+<form>
+  <h2>As próximas perguntas se referem ao útimo episódio de cafeleia vivenciada por você.</h2>
+  <div class="form-group mt-2">
+
+    <label for="title">1.Marque a alternativa que representa a localização mais exata da dor:</label>
+    <select [(ngModel)]="quest.LocalExataDor" name="LocalExataDor">
+      <option *ngFor="let itenLocalExatoDor of itensLocalExatoDor" [value]="itenLocalExatoDor">{{MappingLocalExatoDor[itenLocalExatoDor]}}</option>
+    </select>
+
+    <div class="row mt-2 img-thumbnail">
+      <div *ngFor="let questLocalExatoDor of questsLocalExatoDor" class="col-md-2">
+        <img [src]="questLocalExatoDor.imag">
+        <div class="Letra">{{questLocalExatoDor.alt}}</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="form-group mt-2">
+
+    <label for="title">2.A dor irradia para algun lugar fora das imgens acima ?:</label>
+    <input [(ngModel)]="quest.DorIrradia" type="checkbox" name="DorIrradia" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">3.Se sim, quail ?:</label>
+
+    <div style="position:relative">
+      <img style="width:10%;position: absolute" class="marker_O" [hidden]="showTheDorIrradia" [ngStyle]="setDorIrradiaView()" src="/../assets/imagens/O_mark.png" id="marker" />
+      <div> <img src="/../assets/imagens/Face_Irradia.jpg" class="img-thumbnail" (mousemove)="getDorIrradiaCoordinate($event)" (click)="lockTheDorIrradiaCordinates()" (window:resize)="onDorIrradiaResize()"> </div>
+    </div>
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">4.Como vc descreve essa dor ?:</label>
+    <input [(ngModel)]="quest.DiscricaoDor" type="text" style="width:50%" name="DiscricaoDor" placeholder="pontada/facada, queimação, aperto, pulsante, etc." />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">5.Em uma escala de 0-10, sendo 0 sem dor e 10 a pior dor que vc ja sentiu, qual é a intensidade dessa dor ?:</label>
+    <input [(ngModel)]="quest.ItensidadeDor" type="number" [max]="10" [min]="0" name="ItensidadeDor" placeholder="0" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">6.Apartir do início do sintoma, quanto tempo leva para atingir o pico de dor ? (hora:min):</label>
+    <input [(ngModel)]="quest.TempoPicoDor" type="time" name="TempoPicoDor" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">7.A aprtir do início do sintoma, quanto tempo leva para a resoluçaõ da dor ? (hora:min):</label>
+    <input [(ngModel)]="quest.TempoCrise" type="time" name="TempoCrise" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">8.Você já identificou algum fator que desencadeia a dor ?:</label>
+    <input [(ngModel)]="quest.FatorAgravante" type="checkbox" name="FatorAgravante" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">8.1. Se sim, Qual ?:</label>
+    <input [(ngModel)]="quest.QualFatorAgravante" type="text" style="width:50%" name="QualFatorAgravante" placeholder="Fator Agravante" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">9.Você já identificou algum fator que melhora a dor?:</label>
+    <input [(ngModel)]="quest.FatorAtenuante" type="checkbox" name="FatorAtenuante" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">9.1.Se sim, Qual ?:</label>
+    <input [(ngModel)]="quest.QualFatorAtenuante" type="text" style="width:50%" name="QualFatorAtenuante" placeholder="Fator Atenuante" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">10.Durante a crise você apresenta algum sintoma além da dor ?:</label>
+    <input [(ngModel)]="quest.SintomasAlem" type="checkbox" name="SintomasAlem" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">10.1.Se sim, Qual ?:</label>
+    <input [(ngModel)]="quest.QualSintomasAlem" type="text" style="width:70%" name="QualSintomasAlem" placeholder="náusea, vômito, sensibilidade à luz ou sons, alterações visuais, etc." />
+
+  </div>
+</form>

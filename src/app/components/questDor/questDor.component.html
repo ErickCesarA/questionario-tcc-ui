@@ -1,0 +1,95 @@
+<form>
+  <h2>INVENTÁRIO BREVE DE DOR</h2>
+  <div class="form-group mt-2">
+
+    <label for="title">1.Clique no local de dor :</label>
+
+    <div style="position:relative">
+      <img style="width:5%;position: absolute" class="marker_O" [hidden]="showTheDor" [ngStyle]="setDorView()" src="/../assets/imagens/O_mark.png" id="marker" />
+      <img src="/../assets/imagens/male_female_body.jpg" class="img-thumbnail" (mousemove)="getDorCoordinate($event)" (click)="lockTheDorCordinates()" (window:resize)="onDorResize()" />
+    </div>
+  </div>
+  
+  <div class="form-group mt-2">
+
+    <label for="title">2.Clique no local de dor mais intensa :</label>
+
+    <div style="position:relative">
+      <img style="width:2%; position: absolute;" class="marker_X" [hidden]="showTheMaiorDor" [ngStyle]="setMaiorDorView()" src="/../assets/imagens/X_mark.png" id="marker" />
+      <div> <img src="/../assets/imagens/male_female_body.jpg" class="img-thumbnail" (mousemove)="getMaiorDorCoordinate($event)" (click)="lockTheMaiorDorCordinates()" (window:resize)="onMaiorDorResize()"> </div>
+    </div>
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">3.De 0 a 10, qual representa melhor a dor mais intesa que vc sentiu nas últimas 24h ?:</label>
+    <input [(ngModel)]="quest.MaiorDor24h" type="number" [max]="10" [min]="0" name="MaiorDor24h" placeholder="0" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">4.De 0 a 10, qual representa melhor a dor menos intesa que vc sentiu nas últimas 24h ?:</label>
+    <input [(ngModel)]="quest.MenorDor24h" type="number" [max]="10" [min]="0" name="MenorDor24h" placeholder="0"/>
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">5.De 0 a 10, qual representa melhor a dor em geral que vc sentiu nas últimas 24h ?:</label>
+    <input [(ngModel)]="quest.GeralDor24h" type="number" [max]="10" [min]="0" name="GeralDor24h" placeholder="0"/>
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">6.De 0 a 10, qual representa melhor a dor media no presente momento ?:</label>
+    <input [(ngModel)]="quest.DorMomento" type="number" [max]="10" [min]="0" name="DorMomento" placeholder="0"  />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">7.Quais são os tratamentos farmacológicos que você toma contra a dor:</label>
+    <input [(ngModel)]="quest.TratamentoDor" type="text" style="width:70% " name="TratamentoDor" placeholder="tratamentos farmacológicos" />
+
+  </div>
+  <div class="form-group mt-2"> <label for="title">8.De 0 a 10, qual representa melhor a maneira em que a dor interferio, na útima semana, </label></div>
+  <div class="form-group  mt-2">
+
+    <label for="title">A. em atividades gerais ?:</label>
+    <input [(ngModel)]="quest.DorAtividadeGeral" type="number" [max]="10" [min]="0" name="DorAtividadeGeral" placeholder="0" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">B. no seu humor ?:</label>
+    <input [(ngModel)]="quest.DorHumor" type="number" [max]="10" [min]="0" name="DorHumor" placeholder="0" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">C. na capacidade de andar ?:</label>
+    <input [(ngModel)]="quest.DorLocomocao" type="number" [max]="10" [min]="0" name="DorLocomocao" placeholder="0" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">D. trabalhos habituais ?:</label>
+    <input [(ngModel)]="quest.DorTrabalho" type="number" [max]="10" [min]="0" name="DorTrabalho" placeholder="0" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">E. na realação com os outro ?:</label>
+    <input [(ngModel)]="quest.DorRelacionamento" type="number" [max]="10" [min]="0" name="DorRelacionamento" placeholder="0" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">F. no sono ?:</label>
+    <input [(ngModel)]="quest.DorSono" type="number" [max]="10" [min]="0" name="DorSono" placeholder="0" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">G. no gosto pela vida ?:</label>
+    <input [(ngModel)]="quest.DorVida" type="number" [max]="10" [min]="0" name="DorVida" placeholder="0" />
+  </div>
+
+</form>

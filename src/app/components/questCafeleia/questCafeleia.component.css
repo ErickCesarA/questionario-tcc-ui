@@ -1,0 +1,22 @@
+.Letra {
+  font-family: 'Rubik',sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: red;
+}
+
+.img-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+}
+
+.box {
+  background-color: white;
+}
+.marker_O {
+  opacity: 0.5;
+  margin-left: -5%;
+  margin-top: -5%;
+ 
+}

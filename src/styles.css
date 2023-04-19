@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import "../node_modules/bootstrap/dist/css/bootstrap";
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  --primary-color: #189ad3;
+  --second-color: #b3cde0;
+  --body-text-color: #011f4b;
+  --bar-color: #dfe3ee;
+}
+
+.body {
+  padding: 16px 100px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  color: var(--body-text-color);
+  background-color: var(--second-color);
+}
+

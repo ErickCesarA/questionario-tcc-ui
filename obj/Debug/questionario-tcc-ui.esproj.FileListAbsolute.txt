@@ -1,0 +1,2 @@
+C:\Users\erick\source\repos\questionario-tcc-ui\obj\Debug\questionario-tcc-ui.esproj.SuggestedBindingRedirects.cache
+C:\Users\erick\source\repos\questionario-tcc-ui\obj\Debug\questionario-tcc-ui.esproj.CoreCompileInputs.cache
