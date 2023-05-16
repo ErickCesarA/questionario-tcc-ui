@@ -7,6 +7,7 @@ import { Questionario } from '../models/questionario';
 @Injectable({
   providedIn: 'root'
 })
+
 export class QuestServiceService {
   private  url = "Paciente";
 

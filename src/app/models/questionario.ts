@@ -2,13 +2,15 @@ import { Time } from "@angular/common";
 
 export class Questionario {
         Id?: number;
+        Nome = "";
+        Telefone = "";
         Idade?: number;
-        Genero?: number;
-        StatusCivil?: number;
-        Etinia?: number;
+        Genero = "";
+        StatusCivil = "";
+        Etinia = "";
         DoencaCronica?: boolean;
         QualDoenca? = "";
-        HoraExercicio?: number; 
+        HoraExercicio = ""; 
         MedicamentoContinuo?: boolean;
         QualMedicamento = ""
         MlCafeSemana?: number;
@@ -16,14 +18,14 @@ export class Questionario {
         QtdMacosSemana?: number; 
         Bebida?: boolean;
         BedidasSemana?: number;
-        AnosCafeleia?: number;
+        AnosCafeleia = "";
         EpisodiosMes?: number;
         BuscaProficional?: boolean;
         Melhora?: boolean;
-        LocalDorX?: number;
-        LocalDorY?:number;
-        LocalMaiorDorX?: number;
-        LocalMaiorDorY?: number;
+        LocalDorX?: 1;
+        LocalDorY?:1;
+        LocalMaiorDorX?: 1;
+        LocalMaiorDorY?: 1;
         MaiorDor24h?: number;
         MenorDor24h?: number;
         GeralDor24h?: number;
@@ -36,14 +38,14 @@ export class Questionario {
         DorRelacionamento?: number;
         DorSono?: number;
         DorVida?: number;
-        LocalExataDor?: number;
+        LocalExataDor = "";
         DorIrradia?: boolean;
-        LocacalIrradiaDorX?:number;
-        LocacalIrradiaDorY?:number;
+        LocacalIrradiaDorX?:1;
+        LocacalIrradiaDorY?:1;
         DiscricaoDor = "";
         ItensidadeDor ?: number;
-        TempoPicoDor?: Time;
-        TempoCrise?: Time;
+        TempoPicoDor = "";
+        TempoCrise = "";
         FatorAgravante?: boolean;
         QualFatorAgravante = "";
         FatorAtenuante ?: boolean 

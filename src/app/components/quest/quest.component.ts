@@ -11,7 +11,7 @@ import { QuestServiceService } from '../../services/quest-service.service';
 
 export class QuestComponent implements OnInit {
 
-  @Input() questionario!: Questionario;
+  @Input() questionario = new Questionario;
   @Output() questionarioUpdate = new EventEmitter<Questionario[]>();
 
   constructor(private questService: QuestServiceService) { }
@@ -21,9 +21,9 @@ export class QuestComponent implements OnInit {
 
 
   }
-
+  
   enviarQuestionario(questionario: Questionario) {
-
+    console.log(Questionario)
     this.questService
       .enviarQuestionario(questionario)
       .subscribe((questionarios: Questionario[]) => this.questionarioUpdate.emit(questionarios));
