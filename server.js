@@ -1,19 +1,16 @@
 //Install express server
 const express = require('express');
 const path = require('path');
-
+const nomeApp = process.env.npm_package_name;
 const app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist/questionario-tcc-ui'));
+app.use(express.static(__dirname + '/dist/ui-questionario-tcc'));
 
 app.get('/*', function (req, res) {
 
-  res.sendFile(path.join(__dirname + '/dist/questionario-tcc-ui/index.html'));
+  res.sendFile(path.join(__dirname + '/dist/ui-questionario-tcc/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
-let port = process.env.PORT || 8000;
-
-app.listen(port, () => { console.log('App running in port ${port}') });
-
+app.listen(process.env.PORT || 8080);
