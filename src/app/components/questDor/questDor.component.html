@@ -5,7 +5,7 @@
     <label for="title">1.Clique no local de dor :</label>
 
     <div style="position:relative">
-      <img style="width:5%;position: absolute" class="marker_O" [hidden]="showTheDor" [ngStyle]="setDorView()" src="/../assets/imagens/O_mark.png" id="marker" />
+      <img style="width:3.5%;position: absolute" class="marker_O" [hidden]="showTheDor" [ngStyle]="setDorView()" src="/../assets/imagens/O_mark.png" id="marker" />
       <img src="/../assets/imagens/male_female_body.jpg" class="img-thumbnail" (mousemove)="getDorCoordinate($event)" (click)="lockTheDorCordinates()" (window:resize)="onDorResize()" />
     </div>
   </div>

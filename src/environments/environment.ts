@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://localhost:7288/api"
+  apiUrl: "https://api-questionario-tcc.herokuapp.com/swagger/api"
 };
 
 /*

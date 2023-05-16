@@ -24,10 +24,10 @@
   </div>
   <div class="form-group mt-2">
 
-    <label for="title">3.Se sim, quail ?:</label>
+    <label for="title">3.Se sim, qual ?:</label>
 
     <div style="position:relative">
-      <img style="width:10%;position: absolute" class="marker_O" [hidden]="showTheDorIrradia" [ngStyle]="setDorIrradiaView()" src="/../assets/imagens/O_mark.png" id="marker" />
+      <img style="width:5%;position: absolute" class="marker_O" [hidden]="showTheDorIrradia" [ngStyle]="setDorIrradiaView()" src="/../assets/imagens/O_mark.png" id="marker" />
       <div> <img src="/../assets/imagens/Face_Irradia.jpg" class="img-thumbnail" (mousemove)="getDorIrradiaCoordinate($event)" (click)="lockTheDorIrradiaCordinates()" (window:resize)="onDorIrradiaResize()"> </div>
     </div>
 
@@ -88,8 +88,20 @@
   </div>
   <div class="form-group mt-2">
 
-    <label for="title">10.1.Se sim, Qual ?:</label>
-    <input [(ngModel)]="quest.QualSintomasAlem" type="text" style="width:70%" name="QualSintomasAlem" placeholder="náusea, vômito, sensibilidade à luz ou sons, alterações visuais, etc." />
+    <label for="title">10.1.Se sim, seria náusea/vômito ?:</label>
+    <input [(ngModel)]="quest.NauseaVomito" type="checkbox" name="NauseaVomito" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">10.2.Se sim, seria maior sensibilidade à luz ou ao som ?:</label>
+    <input [(ngModel)]="quest.SensiLuzSom" type="checkbox" name="SensiLuzSom" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">10.3.Se sim, seira a visão de pontos brilhantes ou manchas escuras ?:</label>
+    <input [(ngModel)]="quest.PontBriManchEsc" type="checkbox" name="PontBriManchEsc"  />
 
   </div>
 </form>

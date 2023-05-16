@@ -49,5 +49,7 @@ export class Questionario {
         FatorAtenuante ?: boolean 
         QualFatorAtenuante = ""; 
         SintomasAlem ?: boolean; 
-        QualSintomasAlem = ""; 
+        NauseaVomito?: boolean;
+        SensiLuzSom?: boolean;
+        PontBriManchEsc?: boolean;
 }
