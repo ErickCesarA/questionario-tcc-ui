@@ -1,11 +1,13 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { CheckboxRequiredValidator, FormBuilder, FormGroup } from '@angular/forms';
+import { CheckboxRequiredValidator, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Questionario } from 'src/app/models/questionario';
 import { EnumHorasExercicios, MappingHorasExercicios } from 'src/app/enums/horasExercicios';
 import { EnumGenero, MappingGenero } from 'src/app/enums/genero';
 import { EnumEtinia, MappingEtinia } from 'src/app/enums/etinia';
 import { EnumAnosCafeleia, MappingAnosCafeleia } from 'src/app/enums/anosCafeleia';
 import { EnumStatusCivil, MappingStatusCivil } from 'src/app/enums/statusCivil';
+import { QuestPessoal } from '../../models/questionarioPessoal';
+
 
 
 @Component({
@@ -16,8 +18,8 @@ import { EnumStatusCivil, MappingStatusCivil } from 'src/app/enums/statusCivil';
 
 export class QuestPessoalComponent implements OnInit {
 
-  quest!: Questionario;
-
+  @Input() pessoalQuest!: FormGroup;
+ 
   public MappingHorasExercicios = MappingHorasExercicios;
   public itensHorasExercicios = Object.values(EnumHorasExercicios).filter(value => typeof value === 'string');
 
@@ -33,12 +35,14 @@ export class QuestPessoalComponent implements OnInit {
   public MappingStatusCivil = MappingStatusCivil;
   public itensStatusCivil = Object.values(EnumStatusCivil).filter(value => typeof value === 'string');
 
+  
+
   constructor() { }
 
   ngOnInit(): void {
 
-    this.quest = new Questionario();
   }
-
+  
+  
 }
 

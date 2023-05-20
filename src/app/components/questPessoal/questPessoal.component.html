@@ -1,27 +1,27 @@
-<form>
-  <h2>QUESTIONÁRIO AOS PARTICIPANTES</h2>
+<h2>QUESTIONÁRIO AOS PARTICIPANTES</h2>
+<form [formGroup]="pessoalQuest">
   <div class="form-group mt-2">
 
     <label class="margin-top" for="title">1.Qual é a sua idade em anos ?:</label>
-    <input [(ngModel)]="quest.Idade" type="number" name="Idade" placeholder="anos" />
+    <input  type="number" formControlName="Idade" placeholder="anos" />
 
   </div>
   <div class="form-group mt-2">
 
     <label class="margin-top" for="title">2.Informe seu nome ?:</label>
-    <input [(ngModel)]="quest.Nome" type="text" style="width:50%" name="Nome" />
+    <input  type="text" style="width:30%" formControlName="Nome" />
 
   </div>
   <div class="form-group mt-2">
 
     <label class="margin-top" for="title">3.Informe seu telefone ?:</label>
-    <input [(ngModel)]="quest.Telefone" type="number" name="Telefone" placeholder="(00) 00000-0000" />
+    <input  type="tel" formControlName="Telefone" placeholder="(00) 00000-0000" />
 
   </div>
   <div class="form-group mt-2">
 
     <label for="title">4.Com qual gênero você se identifica ? :</label>
-    <select [(ngModel)]="quest.Genero" name="Genero" placeholder="Gênero">
+    <select  formControlName="Genero" placeholder="Gênero">
       <option placeholder="Gênero" *ngFor="let itenGenero of itensGenero" [value]="itenGenero">{{MappingGenero[itenGenero]}}</option>
     </select>
 
@@ -29,7 +29,7 @@
   <div class="form-group  mt-2">
 
     <label for="title">5.Qual é o seu estado civil atual ?:</label>
-    <select [(ngModel)]="quest.StatusCivil" name="StatusCivil">
+    <select  formControlName="StatusCivil">
       <option *ngFor="let itenStatusCivil of itensStatusCivil" [value]="itenStatusCivil">{{MappingStatusCivil[itenStatusCivil]}}</option>
     </select>
 
@@ -37,26 +37,26 @@
   <div class="form-group  mt-2">
 
     <label for="title">6.Qual a sua etnia ?:</label>
-    <select [(ngModel)]="quest.Etinia" name="Etinia">
+    <select  formControlName="Etinia">
       <option *ngFor="let itenEtinia of itensEtinia" [value]="itenEtinia">{{MappingEtinia[itenEtinia]}}</option>
     </select>
   </div>
   <div class="form-group  mt-2">
 
     <label for="title">7.Você possui alguma doença crônica ?:</label>
-    <input [(ngModel)]="quest.DoencaCronica" type="checkbox" name="DoencaCronica" />
+    <input  type="checkbox" formControlName="DoencaCronica" />
 
   </div>
   <div class="form-group  mt-2">
 
     <label for="title">7.1.Se sim, qual doença:</label>
-    <input [(ngModel)]="quest.QualDoenca" type="text" style="width:70%" name="QualDoenca" placeholder="diabetes, hipertensão, hipo e hipertireoidismo, transtornos psiquiátricos, etc." />
+    <input type="text" style="width:70%" formControlName="QualDoenca" placeholder="diabetes, hipertensão, hipo e hipertireoidismo, transtornos psiquiátricos, etc." />
 
   </div>
   <div class="form-group  mt-2">
 
     <label for="title">8.Quantas horas de atividade física semanal você pratica em média ?:</label>
-    <select [(ngModel)]="quest.HoraExercicio" name="HoraExercicio">
+    <select  formControlName="HoraExercicio">
       <option *ngFor="let itenHorasExercicios of itensHorasExercicios" [value]="itenHorasExercicios">{{MappingHorasExercicios[itenHorasExercicios]}}</option>
     </select>
 
@@ -64,49 +64,49 @@
   <div class="form-group  mt-2">
 
     <label for="title">9.Você faz uso de medicamento continuo ?:</label>
-    <input [(ngModel)]="quest.MedicamentoContinuo" type="checkbox" name="MedicamentoContinuo" />
+    <input  type="checkbox" formControlName="MedicamentoContinuo" />
 
   </div>
   <div class="form-group  mt-2">
 
     <label for="title">10.1.Se sim, quais medicamentos ?:</label>
-    <input [(ngModel)]="quest.QualMedicamento" type="text" style="width:50%" name="QualMedicamento" placeholder="qual medicamento" />
+    <input  type="text" style="width:50%" formControlName="QualMedicamento" placeholder="qual medicamento" />
 
   </div>
   <div class="form-group  mt-2">
 
     <label for="title">11.Quantos ml de café você comsome por semana, em média ?:</label>
-    <input [(ngModel)]="quest.MlCafeSemana" type="number" name="MlCafeSemana" placeholder="ml" />
+    <input  type="number" formControlName="MlCafeSemana" placeholder="ml" />
 
   </div>
   <div class="form-group  mt-2">
 
     <label for="title">12.Você fuma ?:</label>
-    <input [(ngModel)]="quest.Fuma" type="checkbox" name="Fuma" />
+    <input  type="checkbox" formControlName="Fuma" />
 
   </div>
   <div class="form-group  mt-2">
 
     <label for="title">12.1.Se sim, quantos maços por semana ?:</label>
-    <input [(ngModel)]="quest.QtdMacosSemana" type="number" name="QtdMacosSemana" placeholder="0" />
+    <input  type="number" formControlName="QtdMacosSemana" placeholder="0" />
 
   </div>
   <div class="form-group  mt-2">
 
     <label for="title">13.Você comsome álcool?:</label>
-    <input [(ngModel)]="quest.Bebida" type="checkbox" name="Bebida" />
+    <input  type="checkbox" formControlName="Bebida" />
 
   </div>
   <div class="form-group  mt-2">
 
     <label for="title">13.1.Se sim, quantas vezes durante a semana ?:</label>
-    <input [(ngModel)]="quest.BedidasSemana" type="number" name="BedidasSemana" placeholder="0" />
+    <input  type="number" formControlName="BedidasSemana" placeholder="0" />
 
   </div>
   <div class="form-group  mt-2">
 
     <label for="title">14.Há quanto tempo você convive com a cafelei ?:</label>
-    <select [(ngModel)]="quest.AnosCafeleia" name="AnosCafeleia">
+    <select formControlName="AnosCafeleia">
       <option *ngFor="let itenAnosCafeleia of itensAnosCafeleia" [value]="itenAnosCafeleia">{{MappingAnosCafeleia[itenAnosCafeleia]}}</option>
     </select>
 
@@ -114,21 +114,20 @@
   <div class="form-group  mt-2">
 
     <label for="title">15.Em média você apresenta quantos episódios por mês ?:</label>
-    <input [(ngModel)]="quest.EpisodiosMes" type="number" name="EpisodiosMes" placeholder="0" />
+    <input  type="number" formControlName="EpisodiosMes" placeholder="0" />
 
   </div>
   <div class="form-group  mt-2">
 
     <label for="title">16.Você já buscou algum proficional especializado em dor/cafeleia ?:</label>
-    <input [(ngModel)]="quest.BuscaProficional" type="checkbox" name="BuscaProficional" />
+    <input  type="checkbox" formControlName="BuscaProficional" />
 
   </div>
   <div class="form-group  mt-2">
 
     <label for="title">16.1.Se sim, houve melhora dos sintomas ?:</label>
-    <input [(ngModel)]="quest.Melhora" type="checkbox" name="Melhora" />
+    <input  type="checkbox" formControlName="Melhora" />
 
   </div>
-
 </form>
-
+  

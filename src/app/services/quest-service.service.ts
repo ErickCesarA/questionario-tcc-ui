@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { OuterExpressionKinds } from 'typescript';
 import { environment } from '../../environments/environment';
 import { Questionario } from '../models/questionario';
 
@@ -9,7 +10,7 @@ import { Questionario } from '../models/questionario';
 })
 
 export class QuestServiceService {
-  private  url = "Paciente";
+  private url = "Paciente";
 
   constructor(private http: HttpClient) { }
 
@@ -22,4 +23,5 @@ export class QuestServiceService {
   {
     return this.http.post<Questionario[]>(`${environment.apiUrl}/${this.url}`,questionario);
   }
+ 
 }

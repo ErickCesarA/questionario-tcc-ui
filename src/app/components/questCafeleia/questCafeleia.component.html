@@ -1,9 +1,9 @@
-<form>
-  <h2>As próximas perguntas se referem ao útimo episódio de cafeleia vivenciada por você.</h2>
+<h2>As próximas perguntas se referem ao útimo episódio de cafeleia vivenciada por você.</h2>
+<form [formGroup]="cafeleiaQuest">
   <div class="form-group mt-2">
 
     <label for="title">1.Marque a alternativa que representa a localização mais exata da dor:</label>
-    <select [(ngModel)]="quest.LocalExataDor" name="LocalExataDor">
+    <select  formControlName="LocalExataDor">
       <option *ngFor="let itenLocalExatoDor of itensLocalExatoDor" [value]="itenLocalExatoDor">{{MappingLocalExatoDor[itenLocalExatoDor]}}</option>
     </select>
 
@@ -19,7 +19,7 @@
   <div class="form-group mt-2">
 
     <label for="title">2.A dor irradia para algun lugar fora das imgens acima ?:</label>
-    <input [(ngModel)]="quest.DorIrradia" type="checkbox" name="DorIrradia" />
+    <input  type="checkbox" formControlName="DorIrradia" />
 
   </div>
   <div class="form-group mt-2">
@@ -35,73 +35,73 @@
   <div class="form-group mt-2">
 
     <label for="title">4.Como vc descreve essa dor ?:</label>
-    <input [(ngModel)]="quest.DiscricaoDor" type="text" style="width:50%" name="DiscricaoDor" placeholder="pontada/facada, queimação, aperto, pulsante, etc." />
+    <input  type="text" style="width:50%" formControlName="DiscricaoDor" placeholder="pontada/facada, queimação, aperto, pulsante, etc." />
 
   </div>
   <div class="form-group mt-2">
 
     <label for="title">5.Em uma escala de 0-10, sendo 0 sem dor e 10 a pior dor que vc ja sentiu, qual é a intensidade dessa dor ?:</label>
-    <input [(ngModel)]="quest.ItensidadeDor" type="number" [max]="10" [min]="0" name="ItensidadeDor" placeholder="0" />
+    <input  type="range" [max]="10" [min]="0" formControlName="ItensidadeDor" placeholder="0" />
 
   </div>
   <div class="form-group mt-2">
 
     <label for="title">6.Apartir do início do sintoma, quanto tempo leva para atingir o pico de dor ? (hora:min):</label>
-    <input [(ngModel)]="quest.TempoPicoDor" type="time" name="TempoPicoDor" />
+    <input  type="time" formControlName="TempoPicoDor" />
 
   </div>
   <div class="form-group mt-2">
 
     <label for="title">7.A aprtir do início do sintoma, quanto tempo leva para a resoluçaõ da dor ? (hora:min):</label>
-    <input [(ngModel)]="quest.TempoCrise" type="time" name="TempoCrise" />
+    <input  type="time" formControlName="TempoCrise" />
 
   </div>
   <div class="form-group mt-2">
 
     <label for="title">8.Você já identificou algum fator que desencadeia a dor ?:</label>
-    <input [(ngModel)]="quest.FatorAgravante" type="checkbox" name="FatorAgravante" />
+    <input  type="checkbox" formControlName="FatorAgravante" />
 
   </div>
   <div class="form-group mt-2">
 
     <label for="title">8.1. Se sim, Qual ?:</label>
-    <input [(ngModel)]="quest.QualFatorAgravante" type="text" style="width:50%" name="QualFatorAgravante" placeholder="Fator Agravante" />
+    <input  type="text" style="width:50%" formControlName="QualFatorAgravante" placeholder="Fator Agravante" />
 
   </div>
   <div class="form-group mt-2">
 
     <label for="title">9.Você já identificou algum fator que melhora a dor?:</label>
-    <input [(ngModel)]="quest.FatorAtenuante" type="checkbox" name="FatorAtenuante" />
+    <input  type="checkbox" formControlName="FatorAtenuante" />
 
   </div>
   <div class="form-group mt-2">
 
     <label for="title">9.1.Se sim, Qual ?:</label>
-    <input [(ngModel)]="quest.QualFatorAtenuante" type="text" style="width:50%" name="QualFatorAtenuante" placeholder="Fator Atenuante" />
+    <input  type="text" style="width:50%" formControlName="QualFatorAtenuante" placeholder="Fator Atenuante" />
 
   </div>
   <div class="form-group mt-2">
 
     <label for="title">10.Durante a crise você apresenta algum sintoma além da dor ?:</label>
-    <input [(ngModel)]="quest.SintomasAlem" type="checkbox" name="SintomasAlem" />
+    <input  type="checkbox" formControlName="SintomasAlem" />
 
   </div>
   <div class="form-group mt-2">
 
     <label for="title">10.1.Se sim, seria náusea/vômito ?:</label>
-    <input [(ngModel)]="quest.NauseaVomito" type="checkbox" name="NauseaVomito" />
+    <input  type="checkbox" formControlName="NauseaVomito" />
 
   </div>
   <div class="form-group mt-2">
 
     <label for="title">10.2.Se sim, seria maior sensibilidade à luz ou ao som ?:</label>
-    <input [(ngModel)]="quest.SensiLuzSom" type="checkbox" name="SensiLuzSom" />
+    <input  type="checkbox" formControlName="SensiLuzSom" />
 
   </div>
   <div class="form-group mt-2">
 
     <label for="title">10.3.Se sim, seira a visão de pontos brilhantes ou manchas escuras ?:</label>
-    <input [(ngModel)]="quest.PontBriManchEsc" type="checkbox" name="PontBriManchEsc"  />
+    <input  type="checkbox" formControlName="PontBriManchEsc" />
 
   </div>
 </form>

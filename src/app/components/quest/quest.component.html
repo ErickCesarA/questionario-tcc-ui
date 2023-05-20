@@ -1,6 +1,8 @@
 <body class="body">
-  <app-quest-dor></app-quest-dor>
-  <app-quest-pessoal></app-quest-pessoal>
-  <app-quest-cafeleia></app-quest-cafeleia>
-  <button class="mt-2" (click)="enviarQuestionario(questionario)">Enviar</button>
+  <form (ngSubmit)="enviarQuestionario()" [formGroup]="addQuestionario">
+    <app-quest-dor [dorQuest]="dorQuestForm"></app-quest-dor>
+    <app-quest-pessoal [pessoalQuest]="pessoalQuestForm"></app-quest-pessoal>
+    <app-quest-cafeleia [cafeleiaQuest]="cafeleiaQuestForm"></app-quest-cafeleia>
+    <button class="mt-2" type="submit">Enviar</button>
+  </form>
 </body>

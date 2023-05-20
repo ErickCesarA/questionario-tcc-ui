@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Questionario } from '../../models/questionario';
+import { QuestDor } from '../../models/questionarioDor';
 
 @Component({
   selector: 'app-quest-dor',
@@ -8,7 +10,7 @@ import { Questionario } from '../../models/questionario';
 })
 export class QuestDorComponent implements OnInit {
 
-  quest!: Questionario;
+  @Input() dorQuest!: FormGroup;
 
   xDor!: number;
   yDor!: number;
@@ -23,11 +25,11 @@ export class QuestDorComponent implements OnInit {
   yMaiorDorLocked!: number;
   showTheMaiorDor!: boolean;
 
+
   constructor() { }
 
   ngOnInit(): void {
 
-    this.quest = new Questionario();
     this.showTheDor = true
     this.showTheMaiorDor = true;
    
@@ -40,6 +42,8 @@ export class QuestDorComponent implements OnInit {
   lockTheDorCordinates() {
     this.xDorLocked = this.xDor;
     this.yDorLocked = this.yDor;
+    this.dorQuest.controls['LocalDorX'].setValue(this.xDorLocked);
+    this.dorQuest.controls['LocalDorY'].setValue(this.yDorLocked);
     this.showTheDor = false;
 
   }
@@ -62,6 +66,8 @@ export class QuestDorComponent implements OnInit {
   lockTheMaiorDorCordinates() {
     this.xMaiorDorLocked = this.xMaiorDor;
     this.yMaiorDorLocked = this.yMaiorDor;
+    this.dorQuest.controls['LocalMaiorDorX'].setValue(this.xMaiorDorLocked);
+    this.dorQuest.controls['LocalMaiorDorY'].setValue(this.yMaiorDorLocked);
     this.showTheMaiorDor = false;
   }
   onMaiorDorResize() {
@@ -76,6 +82,6 @@ export class QuestDorComponent implements OnInit {
     return maiorDorView;
 
   }
-  
+
 }
 
