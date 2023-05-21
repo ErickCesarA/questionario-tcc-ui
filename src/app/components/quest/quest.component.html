@@ -1,8 +1,9 @@
-<body class="body">
+<body class="body"  *ngIf="!questFormSucess">
   <form (ngSubmit)="enviarQuestionario()" [formGroup]="addQuestionario">
     <app-quest-dor [dorQuest]="dorQuestForm"></app-quest-dor>
     <app-quest-pessoal [pessoalQuest]="pessoalQuestForm"></app-quest-pessoal>
     <app-quest-cafeleia [cafeleiaQuest]="cafeleiaQuestForm"></app-quest-cafeleia>
-    <button class="mt-2" type="submit">Enviar</button>
+    <button class="btn btn-success mt-2" type="submit">Enviar</button>
   </form>
 </body>
+<app-quest-sucess *ngIf="questFormSucess"></app-quest-sucess>

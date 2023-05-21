@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { QuestServiceService } from '../../services/quest-service.service';
-import { QuestDor } from '../../models/questionarioDor';
 import { FormControl, FormGroup, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { Questionario } from '../../models/questionario';
 
 
 
@@ -13,7 +13,9 @@ import { FormControl, FormGroup, UntypedFormBuilder, UntypedFormGroup } from '@a
 
 export class QuestComponent implements OnInit {
 
+  @Input('Allquestionarios') questionarios!: Questionario[];
   public addQuestionario!: UntypedFormGroup;
+  questFormSucess: boolean = false
  
   constructor(private questService: QuestServiceService, private formBuilder: UntypedFormBuilder ) { }
 
@@ -25,15 +27,18 @@ export class QuestComponent implements OnInit {
 
   enviarQuestionario(): void {
     console.log(this.addQuestionario)
-    if (this.addQuestionario.valid) {
-      this.questService.enviarQuestionario(this.addQuestionario.value)
-        .subscribe(x => {
-          console.log(x);
-        });
-    }
-    else {
-      alert('Form invalid');
-    }
+    this.questFormSucess = true
+    //if (this.addQuestionario.valid) {
+    //  this.questService.enviarQuestionario(this.addQuestionario.value)
+    //    .subscribe(x => {
+    //      console.log(x);
+    //      this.questForm = false;
+    //      this.questFormSucess = true
+    //    });
+    //}
+    //else {
+    //  alert('Form invalid');
+    //}
   }
   cafeleiaQuestForm = this.formBuilder.group({
     LocalExataDor: [''],

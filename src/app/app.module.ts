@@ -11,6 +11,8 @@ import { QuestPessoalComponent } from './components/questPessoal/questPessoal.co
 import { QuestDorComponent } from './components/questDor/questDor.component';
 import { QuestCafeleiaComponent } from './components/questCafeleia/questCafeleia.component';
 import { QuestRespostaComponent } from './components/quest-resposta/quest-resposta.component';
+import { QuestSucessComponent } from './components/quest-sucess/quest-sucess.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { QuestRespostaComponent } from './components/quest-resposta/quest-respos
     QuestPessoalComponent,
     QuestDorComponent,
     QuestCafeleiaComponent,
-    QuestRespostaComponent
+    QuestRespostaComponent,
+    QuestSucessComponent
 
   ],
   imports: [
@@ -28,6 +31,8 @@ import { QuestRespostaComponent } from './components/quest-resposta/quest-respos
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AppRoutingModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
