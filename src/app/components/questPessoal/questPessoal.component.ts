@@ -18,7 +18,7 @@ import { QuestPessoal } from '../../models/questionarioPessoal';
 
 export class QuestPessoalComponent implements OnInit {
 
-  @Input() pessoalQuest!: FormGroup;
+  @Input() addQuestionario!: FormGroup;
  
   public MappingHorasExercicios = MappingHorasExercicios;
   public itensHorasExercicios = Object.values(EnumHorasExercicios).filter(value => typeof value === 'string');

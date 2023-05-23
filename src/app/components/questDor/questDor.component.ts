@@ -10,7 +10,7 @@ import { QuestDor } from '../../models/questionarioDor';
 })
 export class QuestDorComponent implements OnInit {
 
-  @Input() dorQuest!: FormGroup;
+  @Input() addQuestionario!: FormGroup;
 
   xDor!: number;
   yDor!: number;
@@ -42,8 +42,8 @@ export class QuestDorComponent implements OnInit {
   lockTheDorCordinates() {
     this.xDorLocked = this.xDor;
     this.yDorLocked = this.yDor;
-    this.dorQuest.controls['LocalDorX'].setValue(this.xDorLocked);
-    this.dorQuest.controls['LocalDorY'].setValue(this.yDorLocked);
+    this.addQuestionario.controls['LocalDorX'].setValue(this.xDorLocked);
+    this.addQuestionario.controls['LocalDorY'].setValue(this.yDorLocked);
     this.showTheDor = false;
 
   }
@@ -66,8 +66,8 @@ export class QuestDorComponent implements OnInit {
   lockTheMaiorDorCordinates() {
     this.xMaiorDorLocked = this.xMaiorDor;
     this.yMaiorDorLocked = this.yMaiorDor;
-    this.dorQuest.controls['LocalMaiorDorX'].setValue(this.xMaiorDorLocked);
-    this.dorQuest.controls['LocalMaiorDorY'].setValue(this.yMaiorDorLocked);
+    this.addQuestionario.controls['LocalMaiorDorX'].setValue(this.xMaiorDorLocked);
+    this.addQuestionario.controls['LocalMaiorDorY'].setValue(this.yMaiorDorLocked);
     this.showTheMaiorDor = false;
   }
   onMaiorDorResize() {

@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { OuterExpressionKinds } from 'typescript';
 import { environment } from '../../environments/environment';
 import { Questionario } from '../models/questionario';
 
@@ -14,14 +13,14 @@ export class QuestServiceService {
 
   constructor(private http: HttpClient) { }
 
-  public getQuestionarios(): Observable<Questionario[]>
-  {
-    return this.http.get<Questionario[]>(`${environment.apiUrl}/${this.url}`);
+  public getQuestionarios(){
+    return this.http.get(`${environment.apiUrl}/${this.url}`);
   }
 
-  public enviarQuestionario(questionario: Questionario): Observable<Questionario[]>
+  public enviarQuestionario(questionario: any)
   {
-    return this.http.post<Questionario[]>(`${environment.apiUrl}/${this.url}`,questionario);
+    return this.http.post(`${environment.apiUrl}/${this.url}`, questionario);
   }
+
  
 }

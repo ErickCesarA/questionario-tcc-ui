@@ -6,21 +6,21 @@
           <th scope="col">Nome</th>
           <th scope="col">Telefone</th>
           <th scope="col">Idade</th>
-          <th scope="col">Sexo</th>
+          <th scope="col">Genero</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let questionario of questionarios">
-          <td>{{questionario.questPessoal.Nome}}</td>
-          <td>{{questionario.questPessoal.Telefone}}</td>
-          <td>{{questionario.questPessoal.Idade}}</td>
-          <td>{{questionario.questPessoal.Genero}}</td>
-          <td><button type="button" (click)="mostrarQuestionario(questionario)" class="btn btn-warning btn-sml"><i class="bi bi-plus-circle-fill"></i></button></td>
+        <tr *ngFor="let questionario of addQuestioanrio">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><button type="button" class="btn btn-warning btn-sml"><i class="bi bi-plus-circle-fill"></i></button></td>
         </tr>
       </tbody>
     </table>
   </div>
   <div>
-    <app-quest [Allquestionarios]="questionarios"></app-quest>
+    <!--<app-quest-details [Allquestionarios]="questionarios"></app-quest-details>-->
   </div>
 </body>

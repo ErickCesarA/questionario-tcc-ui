@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Questionario } from '../../models/questionario';
 import { QuestServiceService } from '../../services/quest-service.service';
 
@@ -10,25 +11,21 @@ import { QuestServiceService } from '../../services/quest-service.service';
 export class QuestRespostaComponent implements OnInit {
 
   questionarios: Questionario[] = [];
-  questToShow!: Questionario;
+  questToShow!: Questionario
+  @Input() addQuestioanrios!: FormGroup;
 
   constructor(private questService: QuestServiceService) { }
 
   ngOnInit(): void {
 
     this.getQuestionarios();
-    
+
   }
 
-  private getQuestionarios() {
-    this.questService
-      .getQuestionarios()
-      .subscribe((result: Questionario[]) => (this.questionarios = result));
-    this.questService
-  }
-
-  mostrarQuestionario(questionario: Questionario) {
-    this.questToShow = questionario;
-
+  private getQuestionarios(): void {
+    this.questService.getQuestionarios()
+      .subscribe(quests => {
+        console.log(quests);
+      });
   }
 }

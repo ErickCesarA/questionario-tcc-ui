@@ -9,7 +9,7 @@ import { EnumLocalExatoDor, MappingLocalExatoDor } from 'src/app/enums/localExat
 })
 export class QuestCafeleiaComponent implements OnInit {
 
-  @Input() cafeleiaQuest!: FormGroup;
+  @Input() addQuestionario!: FormGroup;
  
   xDorIrradia!: number;
   yDorIrradia!: number;
@@ -42,8 +42,8 @@ export class QuestCafeleiaComponent implements OnInit {
   lockTheDorIrradiaCordinates() {
     this.xDorIrradiaLocked = this.xDorIrradia;
     this.yDorIrradiaLocked = this.yDorIrradia;
-    this.cafeleiaQuest.controls['LocacalIrradiaDorX'].setValue(this.xDorIrradiaLocked);
-    this.cafeleiaQuest.controls['LocacalIrradiaDorY'].setValue(this.yDorIrradiaLocked);
+    this.addQuestionario.controls['LocacalIrradiaDorX'].setValue(this.xDorIrradiaLocked);
+    this.addQuestionario.controls['LocacalIrradiaDorY'].setValue(this.yDorIrradiaLocked);
     this.showTheDorIrradia = false;
   }
   onDorIrradiaResize() {
