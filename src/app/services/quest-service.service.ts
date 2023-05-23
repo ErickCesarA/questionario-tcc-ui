@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Questionario } from '../models/questionario';
 
@@ -10,11 +10,17 @@ import { Questionario } from '../models/questionario';
 
 export class QuestServiceService {
   private url = "Paciente";
+  private _refreshLists = new Subject<void>();
 
   constructor(private http: HttpClient) { }
 
-  public getQuestionarios(){
-    return this.http.get(`${environment.apiUrl}/${this.url}`);
+  get refreshLists() {
+    return this._refreshLists
+  }
+
+  public getQuestionarios(): Observable<Questionario[]>
+  {
+    return this.http.get<Questionario[]>(`${environment.apiUrl}/${this.url}`);
   }
 
   public enviarQuestionario(questionario: any)

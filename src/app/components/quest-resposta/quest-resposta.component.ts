@@ -10,22 +10,21 @@ import { QuestServiceService } from '../../services/quest-service.service';
 })
 export class QuestRespostaComponent implements OnInit {
 
-  questionarios: Questionario[] = [];
-  questToShow!: Questionario
-  @Input() addQuestioanrios!: FormGroup;
+  questionarios: Questionario[]=[];
+  addQuestionarios!: FormGroup;
 
   constructor(private questService: QuestServiceService) { }
 
   ngOnInit(): void {
 
-    this.getQuestionarios();
+    this.questService.refreshLists.subscribe(() => { this.getQuestionarios(); });
+    this.getQuestionarios()
 
   }
 
   private getQuestionarios(): void {
     this.questService.getQuestionarios()
-      .subscribe(quests => {
-        console.log(quests);
-      });
+      .subscribe((result: Questionario[]) => (this.questionarios = result));
   }
+  
 }

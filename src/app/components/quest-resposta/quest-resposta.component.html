@@ -1,6 +1,5 @@
-<body class="body">
-  <div>
-    <table class="table table-striped">
+<body class="resposta_body">
+    <table class="table resposta_box" >
       <thead>
         <tr>
           <th scope="col">Nome</th>
@@ -10,16 +9,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let questionario of addQuestioanrio">
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><button type="button" class="btn btn-warning btn-sml"><i class="bi bi-plus-circle-fill"></i></button></td>
+        <tr *ngFor="let questionario of questionarios">
+          <td>{{questionario.Nome}}</td>
+          <td>{{questionario.Telefone}}</td>
+          <td>{{questionario.Idade}}</td>
+          <td>{{questionario.Genero}}</td>
+          <td><button type="button" class="btn btn-warning btn-sml"></button></td>
         </tr>
       </tbody>
     </table>
-  </div>
   <div>
     <!--<app-quest-details [Allquestionarios]="questionarios"></app-quest-details>-->
   </div>
