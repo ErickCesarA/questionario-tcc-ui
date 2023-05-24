@@ -10,13 +10,8 @@ import { Questionario } from '../models/questionario';
 
 export class QuestServiceService {
   private url = "Paciente";
-  private _refreshLists = new Subject<void>();
 
   constructor(private http: HttpClient) { }
-
-  get refreshLists() {
-    return this._refreshLists
-  }
 
   public getQuestionarios(): Observable<Questionario[]>
   {

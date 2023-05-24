@@ -1,15 +1,16 @@
 <body class="resposta_body">
-    <table class="table resposta_box" >
+    <table class="table resposta_box">
       <thead>
         <tr>
           <th scope="col">Nome</th>
           <th scope="col">Telefone</th>
           <th scope="col">Idade</th>
           <th scope="col">Genero</th>
+          <td><button type="button" (click)="mostrar()" class="btn btn-warning btn-sml">+</button></td>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let questionario of questionarios">
+        <tr *ngFor="let questionario of questionarios" >
           <td>{{questionario.Nome}}</td>
           <td>{{questionario.Telefone}}</td>
           <td>{{questionario.Idade}}</td>

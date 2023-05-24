@@ -2,7 +2,7 @@
 <form [formGroup]="addQuestionario">
   <div class="form-group mt-2">
 
-    <label for="title">1.Marque a alternativa que representa a localização mais exata da dor:</label>
+    <label class="required-field" for="title">1.Marque a alternativa que representa a localização mais exata da dor:</label>
     <select  formControlName="LocalExataDor">
       <option *ngFor="let itenLocalExatoDor of itensLocalExatoDor" [value]="itenLocalExatoDor">{{MappingLocalExatoDor[itenLocalExatoDor]}}</option>
     </select>
@@ -18,7 +18,7 @@
 
   <div class="form-group mt-2">
 
-    <label for="title">2.A dor irradia para algun lugar fora das imgens acima ?:</label>
+    <label  class="required-field" for="title">2.A dor irradia para algun lugar fora das imgens acima ?:</label>
     <input  type="checkbox" formControlName="DorIrradia" />
 
   </div>
@@ -34,31 +34,31 @@
   </div>
   <div class="form-group mt-2">
 
-    <label for="title">4.Como vc descreve essa dor ?:</label>
+    <label  class="required-field" for="title">4.Como vc descreve essa dor ?:</label>
     <input  type="text" style="width:50%" formControlName="DiscricaoDor" placeholder="pontada/facada, queimação, aperto, pulsante, etc." />
 
   </div>
   <div class="form-group mt-2">
 
-    <label for="title">5.Em uma escala de 0-10, sendo 0 sem dor e 10 a pior dor que vc ja sentiu, qual é a intensidade dessa dor ?:</label>
+    <label  class="required-field" for="title">5.Em uma escala de 0-10, sendo 0 sem dor e 10 a pior dor que vc ja sentiu, qual é a intensidade dessa dor ?:</label>
     <input  type="range" [max]="10" [min]="0" formControlName="ItensidadeDor" placeholder="0" />
 
   </div>
   <div class="form-group mt-2">
 
-    <label for="title">6.Apartir do início do sintoma, quanto tempo leva para atingir o pico de dor ? (hora:min):</label>
+    <label  class="required-field" for="title">6.Apartir do início do sintoma, quanto tempo leva para atingir o pico de dor ? (hora:min):</label>
     <input  type="time" formControlName="TempoPicoDor" />
 
   </div>
   <div class="form-group mt-2">
 
-    <label for="title">7.A aprtir do início do sintoma, quanto tempo leva para a resoluçaõ da dor ? (hora:min):</label>
+    <label  class="required-field" for="title">7.A aprtir do início do sintoma, quanto tempo leva para a resoluçaõ da dor ? (hora:min):</label>
     <input  type="time" formControlName="TempoCrise" />
 
   </div>
   <div class="form-group mt-2">
 
-    <label for="title">8.Você já identificou algum fator que desencadeia a dor ?:</label>
+    <label class="required-field" for="title">8.Você já identificou algum fator que desencadeia a dor ?:</label>
     <input  type="checkbox" formControlName="FatorAgravante" />
 
   </div>
@@ -70,7 +70,7 @@
   </div>
   <div class="form-group mt-2">
 
-    <label for="title">9.Você já identificou algum fator que melhora a dor?:</label>
+    <label class="required-field" for="title">9.Você já identificou algum fator que melhora a dor?:</label>
     <input  type="checkbox" formControlName="FatorAtenuante" />
 
   </div>
@@ -82,7 +82,7 @@
   </div>
   <div class="form-group mt-2">
 
-    <label for="title">10.Durante a crise você apresenta algum sintoma além da dor ?:</label>
+    <label class="required-field" for="title">10.Durante a crise você apresenta algum sintoma além da dor ?:</label>
     <input  type="checkbox" formControlName="SintomasAlem" />
 
   </div>

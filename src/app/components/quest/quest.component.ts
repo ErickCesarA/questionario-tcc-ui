@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { QuestServiceService } from '../../services/quest-service.service';
-import { FormArray, FormControl, FormGroup, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Questionario } from '../../models/questionario';
 import { concat, ValueFromArray } from 'rxjs';
 
@@ -28,68 +28,65 @@ export class QuestComponent implements OnInit {
     if (this.addQuestionario.valid) {
       this.questService.enviarQuestionario(this.addQuestionario.value)
         .subscribe(result =>
-        {
-          console.log(result);
-        });
-      console.log(this.addQuestionario.value)
+        {console.log(result);});
     this.questFormSucess = true;
     }
     else {
-      alert('Form invalid');
+      alert('Preencha todos os campos obrigatorios');
     }
   }
 
   private initForm(): void {
     this.addQuestionario = this.formBuilder.group({
-      LocalDorX: null,
-      LocalDorY: null,
-      LocalMaiorDorX: null,
-      LocalMaiorDorY: null,
-      MaiorDor24h: null,
-      MenorDor24h: null,
-      GeralDor24h: null,
-      DorMomento: null,
+      LocalDorX: [null, [Validators.required]],
+      LocalDorY: [null, [Validators.required]], 
+      LocalMaiorDorX: [null, [Validators.required]], 
+      LocalMaiorDorY: [null, [Validators.required]], 
+      MaiorDor24h: [0],
+      MenorDor24h: [0],
+      GeralDor24h: [0],
+      DorMomento: [0],
       TratamentoDor: [''],
-      DorAtividadeGeral: null,
-      DorHumor: null,
-      DorLocomocao: null,
-      DorTrabalho: null,
-      DorRelacionamento: null,
-      DorSono: null,
-      DorVida: null,
-      Nome: [''],
-      Telefone: [''],
-      Idade: null,
+      DorAtividadeGeral: [0],
+      DorHumor: [0],
+      DorLocomocao: [0],
+      DorTrabalho: [0],
+      DorRelacionamento: [0],
+      DorSono: [0],
+      DorVida: [0],
+      Nome: [null, [Validators.required]],
+      Telefone: [null, [Validators.required]],
+      Idade: [null, [Validators.required]],
       Genero: [''],
       StatusCivil: [''],
       Etinia: [''],
-      DoencaCronica: false,
+      DoencaCronica: [false],
       QualDoenca: [''],
-      HoraExercicio: [''],
-      MedicamentoContinuo: false,
+      HoraExercicio: [null, [Validators.required]],
+      MedicamentoContinuo: [false],
       QualMedicamento: [''],
-      MlCafeSemana: null,
-      Fuma: false,
-      QtdMacosSemana: null,
-      Bebida: false,
-      BedidasSemana: null,
-      AnosCafeleia: [''],
-      EpisodiosMes: null,
-      BuscaProficional: false,
-      Melhora: false,
-      LocalExataDor: [''],
-      DorIrradia: false,
+      MlCafeSemana: 0,
+      Fuma: [false],
+      QtdMacosSemana: 0,
+      Bebida: [false],
+      BedidasSemana: 0,
+      AnosCafeleia: [null, [Validators.required]],
+      EpisodiosMes: [0],
+      BuscaProficional: [false],
+      Melhora: [false],
+      LocalExataDor: [null, [Validators.required]],
+      DorIrradia: [false],
       LocacalIrradiaDorX: null,
       LocacalIrradiaDorY: null,
-      DiscricaoDor: [''],
-      ItensidadeDor: null,
-      TempoPicoDor: [''],
-      TempoCrise: [''],
-      FatorAgravante: false,
+      DiscricaoDor: [null, [Validators.required]],
+      ItensidadeDor: [0],
+      TempoPicoDor: [null, [Validators.required]],
+      TempoCrise: [null, [Validators.required]],
+      FatorAgravante: [false],
       QualFatorAgravante: [''],
-      FatorAtenuante: false,
+      FatorAtenuante: [false],
       QualFatorAtenuante: [''],
-      SintomasAlem: false,
+      SintomasAlem: [false],
       NauseaVomito: false,
       SensiLuzSom: false,
       PontBriManchEsc: false,
