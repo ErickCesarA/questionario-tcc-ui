@@ -1,0 +1,5 @@
+.quest_body{
+    background-color:var(--quest-body-color);
+    padding: 15px;
+    border-radius: 5px;
+}

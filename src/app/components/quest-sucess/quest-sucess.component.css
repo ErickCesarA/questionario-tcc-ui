@@ -4,7 +4,7 @@
   border-radius: 20px 20px;
   font-family: 'Rubik', sans-serif;
   font-size: 30px;
-  background-color: var(--second-color);
+  background-color: var(--quest-body-color);
 }
 .sucess_box_in {
   background-color: darkslategray;

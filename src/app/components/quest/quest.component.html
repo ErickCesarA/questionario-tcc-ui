@@ -1,9 +1,17 @@
 <body class="body"  *ngIf="!questFormSucess">
   <form (ngSubmit)="enviarQuest()" [formGroup]="addQuestionario">
-    <app-quest-dor [addQuestionario]="addQuestionario"></app-quest-dor>
-    <app-quest-pessoal [addQuestionario]="addQuestionario"></app-quest-pessoal>
-    <app-quest-cafeleia [addQuestionario]="addQuestionario"></app-quest-cafeleia>
-    <button type="submit" [disabled]="addQuestionario.invalid" class="btn btn-success mt-2" >Enviar</button>
+    <div class="quest_body">
+      <app-quest-dor [addQuestionario]="addQuestionario"></app-quest-dor>
+    </div>
+
+    <div class="quest_body mt-2">
+      <app-quest-pessoal [addQuestionario]="addQuestionario"></app-quest-pessoal>
+    </div>
+
+    <div class="quest_body mt-2">
+      <app-quest-cafeleia [addQuestionario]="addQuestionario"></app-quest-cafeleia>
+    </div>
+    <button type="submit" [disabled]="addQuestionario.invalid" class="btn btn-success mt-2">Enviar</button>
   </form>
 </body>
 <app-quest-sucess *ngIf="questFormSucess"></app-quest-sucess>

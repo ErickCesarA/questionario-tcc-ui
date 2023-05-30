@@ -1,14 +1,5 @@
-.Letra {
-  font-family: 'Rubik',sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  color: red;
-}
-
 .img-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-evenly;
+  border-radius:5px
 }
 
 .box {

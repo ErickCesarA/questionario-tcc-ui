@@ -10,7 +10,7 @@
   <div class="form-group mt-2">
 
     <label class="required-field" for="title">2.Qual é a sua idade em anos ?:</label>
-    <input type="number" formControlName="Idade" placeholder="anos" />
+    <input type="number" [max]="1000" [min]="0" formControlName="Idade" placeholder="anos" />
 
   </div>
 
@@ -23,8 +23,8 @@
   <div class="form-group mt-2">
 
     <label for="title">4.Com qual gênero você se identifica ? :</label>
-    <select formControlName="Genero" placeholder="Gênero">
-      <option placeholder="Gênero" *ngFor="let itenGenero of itensGenero" [value]="itenGenero">{{MappingGenero[itenGenero]}}</option>
+    <select formControlName="Genero">
+      <option *ngFor="let itenGenero of itensGenero" [value]="itenGenero">{{MappingGenero[itenGenero]}}</option>
     </select>
 
   </div>
@@ -78,7 +78,7 @@
   <div class="form-group  mt-2">
 
     <label for="title">11.Quantos ml de café você comsome por semana, em média ?:</label>
-    <input type="number" formControlName="MlCafeSemana" placeholder="ml" />
+    <input type="number" [max]="1000" [min]="0" formControlName="MlCafeSemana" placeholder="ml" />
 
   </div>
   <div class="form-group  mt-2">
@@ -90,7 +90,7 @@
   <div class="form-group  mt-2">
 
     <label for="title">12.1.Se sim, quantos maços por semana ?:</label>
-    <input type="number" formControlName="QtdMacosSemana" placeholder="0" />
+    <input type="number" [max]="1000" [min]="0" formControlName="QtdMacosSemana" placeholder="0" />
 
   </div>
   <div class="form-group  mt-2">
@@ -102,7 +102,7 @@
   <div class="form-group  mt-2">
 
     <label for="title">13.1.Se sim, quantas vezes durante a semana ?:</label>
-    <input type="number" formControlName="BedidasSemana" placeholder="0" />
+    <input type="number" [max]="1000" [min]="0" formControlName="BedidasSemana" placeholder="0" />
 
   </div>
   <div class="form-group  mt-2">
@@ -116,7 +116,7 @@
   <div class="form-group  mt-2">
 
     <label  class="required-field" for="title">15.Em média você apresenta quantos episódios por mês ?:</label>
-    <input type="number" formControlName="EpisodiosMes" placeholder="0" />
+    <input type="number" [max]="1000" [min]="0" formControlName="EpisodiosMes" placeholder="0" />
 
   </div>
   <div class="form-group  mt-2">

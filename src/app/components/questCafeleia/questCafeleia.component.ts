@@ -20,11 +20,6 @@ export class QuestCafeleiaComponent implements OnInit {
 
   public MappingLocalExatoDor = MappingLocalExatoDor;
   public itensLocalExatoDor = Object.values(EnumLocalExatoDor).filter(value => typeof value === 'string');
-
-  public questsLocalExatoDor = [{ alt: "A", imag: "/../assets/imagens/A.jpg" }, { alt: "B", imag: "/../assets/imagens/B.jpg" }
-    , { alt: "C", imag: "/../assets/imagens/C.jpg" }, { alt: "D", imag: "/../assets/imagens/D.jpg" }
-    , { alt: "E", imag: "/../assets/imagens/E.jpg" }, { alt: "F", imag: "/../assets/imagens/F.jpg" }]
-
   
   constructor() { }
 
