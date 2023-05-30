@@ -5,13 +5,13 @@
 :root {
   --main-body-color: #e7eaf6;
   --quest-body-color: #a2a8d3;
-  --quest-text-color: #142d4c;
+  --quest-text-color: black;
   --bar-color: #113f67;
   --cinco: #ececec;
   --bar-text-color: #9fd3c7;
   --sete: #385170;
   --oito: #38598b;
-  
+  /*#142d4c*/
 }
 
 .body {
@@ -20,7 +20,7 @@
   padding-bottom: 1.5%;
   padding-right: 1.5%;
   font-family: 'Rubik', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   color: var(--quest-text-color);
   background-color: var(--main-body-color);
 }
