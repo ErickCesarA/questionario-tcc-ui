@@ -90,6 +90,23 @@ export class QuestComponent implements OnInit {
       NauseaVomito: false,
       SensiLuzSom: false,
       PontBriManchEsc: false,
+      Criterio1: false,
+      Criterio2: false,
+      Criterio3: false,
+      Criterio4: false,
+      Criterio5: false,
+      Criterio6: false,
+      Criterio7: false,
+      Criterio8: false,
+      Criterio9: false,
+      Criterio10: false,
+      Criterio11: false,
+      Criterio12: false,
+      Criterio13: false,
+      Criterio14: false,
+      Criterio15: false,
+      Criterio16: false,
+
     })
   }
 
