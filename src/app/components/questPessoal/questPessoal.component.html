@@ -3,26 +3,26 @@
 
   <div class="form-group mt-2">
 
-    <label class="required-field" for="title">1.Informe seu nome ?:</label>
+    <label class="required-field" for="title">1.Informe seu nome ?</label>
     <input type="text" style="width:30%" formControlName="Nome" />
 
   </div>
   <div class="form-group mt-2">
 
-    <label class="required-field" for="title">2.Qual é a sua idade em anos ?:</label>
+    <label class="required-field" for="title">2.Qual é a sua idade em anos ?</label>
     <input type="number" [max]="1000" [min]="0" formControlName="Idade" placeholder="anos" />
 
   </div>
 
   <div class="form-group mt-2">
 
-    <label class="required-field" for="title">3.Informe seu telefone ?:</label>
+    <label class="required-field" for="title">3.Informe seu telefone ?</label>
     <input type="tel" formControlName="Telefone" placeholder="(00) 00000-0000" />
 
   </div>
   <div class="form-group mt-2">
 
-    <label for="title">4.Com qual gênero você se identifica ? :</label>
+    <label for="title">4.Com qual gênero você se identifica ?</label>
     <select formControlName="Genero">
       <option *ngFor="let itenGenero of itensGenero" [value]="itenGenero">{{MappingGenero[itenGenero]}}</option>
     </select>
@@ -30,7 +30,7 @@
   </div>
   <div class="form-group  mt-2">
 
-    <label for="title">5.Qual é o seu estado civil atual ?:</label>
+    <label for="title">5.Qual é o seu estado civil atual ?</label>
     <select formControlName="StatusCivil">
       <option *ngFor="let itenStatusCivil of itensStatusCivil" [value]="itenStatusCivil">{{MappingStatusCivil[itenStatusCivil]}}</option>
     </select>
@@ -38,14 +38,14 @@
   </div>
   <div class="form-group  mt-2">
 
-    <label for="title">6.Qual a sua etnia ?:</label>
+    <label for="title">6.Qual a sua etnia ?</label>
     <select formControlName="Etinia">
       <option *ngFor="let itenEtinia of itensEtinia" [value]="itenEtinia">{{MappingEtinia[itenEtinia]}}</option>
     </select>
   </div>
   <div class="form-group  mt-2">
 
-    <label  class="required-field" for="title">7.Você possui alguma doença crônica ?:</label>
+    <label  class="required-field" for="title">7.Você possui alguma doença crônica ?</label>
     <input type="checkbox" formControlName="DoencaCronica" />
 
   </div>
@@ -57,7 +57,7 @@
   </div>
   <div class="form-group  mt-2">
 
-    <label  class="required-field" for="title">8.Quantas horas de atividade física semanal você pratica em média ?:</label>
+    <label  class="required-field" for="title">8.Quantas horas de atividade física semanal você pratica em média ?</label>
     <select formControlName="HoraExercicio">
       <option *ngFor="let itenHorasExercicios of itensHorasExercicios" [value]="itenHorasExercicios">{{MappingHorasExercicios[itenHorasExercicios]}}</option>
     </select>
@@ -65,49 +65,49 @@
   </div>
   <div class="form-group  mt-2">
 
-    <label  class="required-field" for="title">9.Você faz uso de medicamento continuo ?:</label>
+    <label  class="required-field" for="title">9.Você faz uso de medicamento continuo ?</label>
     <input type="checkbox" formControlName="MedicamentoContinuo" />
 
   </div>
   <div class="form-group  mt-2">
 
-    <label for="title">10.1.Se sim, quais medicamentos ?:</label>
+    <label for="title">A.Se sim, quais medicamentos ?</label>
     <input type="text" style="width:50%" formControlName="QualMedicamento" placeholder="qual medicamento" />
 
   </div>
   <div class="form-group  mt-2">
 
-    <label for="title">11.Quantos ml de café você comsome por semana, em média ?:</label>
+    <label for="title">10.Quantos ml de café você comsome por semana, em média ?</label>
     <input type="number" [max]="1000" [min]="0" formControlName="MlCafeSemana" placeholder="ml" />
 
   </div>
   <div class="form-group  mt-2">
 
-    <label  class="required-field" for="title">12.Você fuma ?:</label>
+    <label  class="required-field" for="title">11.Você fuma ?</label>
     <input type="checkbox" formControlName="Fuma" />
 
   </div>
   <div class="form-group  mt-2">
 
-    <label for="title">12.1.Se sim, quantos maços por semana ?:</label>
+    <label for="title">A.Se sim, quantos maços por semana ?</label>
     <input type="number" [max]="1000" [min]="0" formControlName="QtdMacosSemana" placeholder="0" />
 
   </div>
   <div class="form-group  mt-2">
 
-    <label  class="required-field" for="title">13.Você comsome álcool?:</label>
+    <label  class="required-field" for="title">12.Você comsome álcool?</label>
     <input type="checkbox" formControlName="Bebida" />
 
   </div>
   <div class="form-group  mt-2">
 
-    <label for="title">13.1.Se sim, quantas vezes durante a semana ?:</label>
+    <label for="title">A.Se sim, quantas vezes durante a semana ?</label>
     <input type="number" [max]="1000" [min]="0" formControlName="BedidasSemana" placeholder="0" />
 
   </div>
   <div class="form-group  mt-2">
 
-    <label  class="required-field" for="title">14.Há quanto tempo você convive com a cafelei ?:</label>
+    <label  class="required-field" for="title">13.Há quanto tempo você convive com a cafelei ?</label>
     <select formControlName="AnosCafeleia">
       <option *ngFor="let itenAnosCafeleia of itensAnosCafeleia" [value]="itenAnosCafeleia">{{MappingAnosCafeleia[itenAnosCafeleia]}}</option>
     </select>
@@ -115,20 +115,20 @@
   </div>
   <div class="form-group  mt-2">
 
-    <label  class="required-field" for="title">15.Em média você apresenta quantos episódios por mês ?:</label>
+    <label  class="required-field" for="title">14.Em média você apresenta quantos episódios por mês ?</label>
     <input type="number" [max]="1000" [min]="0" formControlName="EpisodiosMes" placeholder="0" />
 
   </div>
   <div class="form-group  mt-2">
 
-    <label  class="required-field" for="title">16.Você já buscou algum proficional especializado em dor/cafeleia ?:</label>
+    <label  class="required-field" for="title">15.Você já buscou algum proficional especializado em dor/cafeleia ?</label>
     <input type="checkbox" formControlName="BuscaProficional" />
 
   </div>
-  <div class="form-group  mt-2">
+  <div class="form-group mt-2 form-check form-switch">
 
-    <label  class="required-field" for="title">16.1.Se sim, houve melhora dos sintomas ?:</label>
-    <input type="checkbox" formControlName="Melhora" />
+    <label class="form-check-label" for="flexSwitchCheckDefault">Se sim, houve melhora dos sintomas ?</label>
+    <input  class="form-check-input" type="checkbox" formControlName="Melhora" />
 
   </div>
 </form>
