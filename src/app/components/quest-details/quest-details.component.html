@@ -1,3 +1,16 @@
-<app-quest-dor></app-quest-dor>
-<app-quest-pessoal></app-quest-pessoal>
-<app-quest-cafeleia></app-quest-cafeleia>
+<body class="body" *ngIf="quest">
+  <form>
+    <div><input [(ngModel)]="quest.nome" class="form-control" name="nome"/></div>
+    <div class="quest_body">
+      <app-quest-dor-details></app-quest-dor-details>
+    </div>
+    <div class="quest_body mt-2">
+      <app-quest-pessol-details></app-quest-pessol-details>
+    </div>
+    <div class="quest_body mt-2">
+      <app-quest-cafeleia-details></app-quest-cafeleia-details>
+    </div>
+    <button (click)="quest" class="btn-close" disabled aria-label="Close"></button>
+  </form>
+
+</body>

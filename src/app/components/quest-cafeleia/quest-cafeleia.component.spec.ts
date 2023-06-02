@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QuestCafeleiaComponent } from './questCafeleia.component';
+import { QuestCafeleiaComponent } from './quest-cafeleia.component';
 
 describe('QuestCafeleiaComponent', () => {
   let component: QuestCafeleiaComponent;

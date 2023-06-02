@@ -1,10 +1,10 @@
 export enum EnumStatusCivil {
 
-  Solteiro = "0" ,
-  Casado = "1",
-  Separado = "2",
-  Divorciado = "3",
-  Viuvo = "4",
+  Solteiro = "Solteiro" ,
+  Casado = "Casado",
+  Separado = "Separado",
+  Divorciado = "Divorciado",
+  Viuvo = "Viúvo",
 }
 
 export const MappingStatusCivil : Record<EnumStatusCivil, string> =

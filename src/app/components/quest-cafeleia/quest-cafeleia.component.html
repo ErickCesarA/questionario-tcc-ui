@@ -25,7 +25,7 @@
 
     <div style="position:relative">
       <img style="width:5%;position: absolute" class="marker_O" [hidden]="showTheDorIrradia" [ngStyle]="setDorIrradiaView()" src="/../assets/imagens/O_mark.png" id="marker" />
-      <div> <img src="/../assets/imagens/Dor_Irradia.jpg" class="img-thumbnail" (mousemove)="getDorIrradiaCoordinate($event)" (click)="lockTheDorIrradiaCordinates()" (window:resize)="onDorIrradiaResize()"> </div>
+      <img src="/../assets/imagens/Dor_Irradia.jpg" class="img-thumbnail" (mousemove)="getDorIrradiaCoordinate($event)" (click)="lockTheDorIrradiaCordinates()" (window:resize)="onDorIrradiaResize()">
     </div>
 
   </div>

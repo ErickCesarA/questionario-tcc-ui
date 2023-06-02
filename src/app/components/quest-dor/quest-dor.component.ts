@@ -5,8 +5,8 @@ import { QuestDor } from '../../models/questionarioDor';
 
 @Component({
   selector: 'app-quest-dor',
-  templateUrl: './questDor.component.html',
-  styleUrls: ['./questDor.component.css']
+  templateUrl: './quest-dor.component.html',
+  styleUrls: ['./quest-dor.component.css']
 })
 export class QuestDorComponent implements OnInit {
 

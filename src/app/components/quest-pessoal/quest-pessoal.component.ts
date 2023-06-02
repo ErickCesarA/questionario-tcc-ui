@@ -12,8 +12,8 @@ import { QuestPessoal } from '../../models/questionarioPessoal';
 
 @Component({
   selector: 'app-quest-pessoal',
-  templateUrl: './questPessoal.component.html',
-  styleUrls: ['./questPessoal.component.css'],
+  templateUrl: './quest-pessoal.component.html',
+  styleUrls: ['./quest-pessoal.component.css'],
 })
 
 export class QuestPessoalComponent implements OnInit {

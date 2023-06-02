@@ -1,25 +1,22 @@
-<body class="resposta_body">
-    <table class="table resposta_box">
-      <thead>
-        <tr>
-          <th scope="col">Nome</th>
-          <th scope="col">Telefone</th>
-          <th scope="col">Idade</th>
-          <th scope="col">Genero</th>
-          <td><button type="button" (click)="mostrar()" class="btn btn-warning btn-sml">+</button></td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let questionario of questionarios" >
-          <td>{{questionario.Nome}}</td>
-          <td>{{questionario.Telefone}}</td>
-          <td>{{questionario.Idade}}</td>
-          <td>{{questionario.Genero}}</td>
-          <td><button type="button" class="btn btn-warning btn-sml"></button></td>
-        </tr>
-      </tbody>
-    </table>
-  <div>
-    <!--<app-quest-details [Allquestionarios]="questionarios"></app-quest-details>-->
-  </div>
+<body class="body">
+  <table class="table resposta_box">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Idade</th>
+        <th scope="col">Genero</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let questionario of questionarios">
+        <td>{{ questionario.nome}}</td>
+        <td>{{ questionario.telefone }}</td>
+        <td>{{ questionario.idade }}</td>
+        <td>{{ questionario.genero }}</td>
+        <td><button type="button" (click)="showDetalhes(questionario)" class="btn btn-warning btn-sml">+</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <app-quest-details [quest]="questsDetalhes"></app-quest-details>
 </body>

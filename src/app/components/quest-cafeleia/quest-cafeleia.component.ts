@@ -4,8 +4,8 @@ import { EnumLocalExatoDor, MappingLocalExatoDor } from 'src/app/enums/localExat
 
 @Component({
   selector: 'app-quest-cafeleia',
-  templateUrl: './questCafeleia.component.html',
-  styleUrls: ['./questCafeleia.component.css']
+  templateUrl: './quest-cafeleia.component.html',
+  styleUrls: ['./quest-cafeleia.component.css']
 })
 export class QuestCafeleiaComponent implements OnInit {
 

@@ -1,8 +1,8 @@
 export enum EnumHorasExercicios {
 
-  poucoExercicio = "0",
-  medioExercicio = "1",
-  muitoExercicio = "2",
+  poucoExercicio = "menos de 1 hora",
+  medioExercicio = "entre 1 a 2 horas",
+  muitoExercicio = "mais de 2 horas",
  
 }
 

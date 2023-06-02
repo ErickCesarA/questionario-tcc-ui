@@ -1,10 +1,10 @@
 export enum EnumGenero {
 
-  Masculino = "0",
-  Feminino = "1",
-  Trangenero = "2",
-  Outro = "3",
-  NDefinir = "4",
+  Masculino = "Masculino",
+  Feminino = "Feminino",
+  Trangenero = "Trangênero",
+  Outro = "Outro",
+  NDefinir = "Prefiro não informar",
 
 }
 

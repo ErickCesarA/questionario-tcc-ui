@@ -1,9 +1,9 @@
 export enum EnumEtinia {
 
-  Pardo = "0",
-  Branco = "1",
-  Preto = "2",
-  Indigena = "3",
+  Pardo = "Pardo",
+  Branco = "Branco",
+  Preto = "Preto",
+  Indigena = "Indigena",
   
 }
 

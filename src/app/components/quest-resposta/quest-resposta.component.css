@@ -2,11 +2,3 @@
   background-color:grey;
   border-radius: 10px 10px;
 }
-.resposta_body {
-  padding-top: 1.5%;
-  padding-bottom: 1.5%;
-  font-family: 'Rubik', sans-serif;
-  font-size: 16px;
-  color: var(--body-text-color);
-  background-color: var(--second-color);
-}

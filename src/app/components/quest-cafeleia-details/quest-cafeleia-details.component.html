@@ -1,0 +1,182 @@
+<h2>As próximas perguntas se referem ao útimo episódio de cafeleia vivenciada por você.</h2>
+<form>
+  <div class="form-group mt-2">
+
+    <label class="required-field" for="title">1.Marque a alternativa que representa a localização mais exata da dor</label>
+    <select>
+      <option></option>
+    </select>
+
+    <div class="mt-2">
+      <img src="/../assets/imagens/Dor.jpg" class="img-thumbnail">
+    </div>
+
+  </div>
+
+  <div class="form-group mt-2">
+
+    <label for="title">2.A dor irradia para algun lugar fora das imgens acima ?</label>
+    <input type="checkbox"/>
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">3.Se sim, qual ?</label>
+
+    <div style="position:relative">
+      <!--<img style="width:5%;position: absolute" class="marker_O" [hidden]="showTheDorIrradia" [ngStyle]="setDorIrradiaView()" src="/../assets/imagens/O_mark.png" id="marker" />-->
+      <!--<img src="/../assets/imagens/Dor_Irradia.jpg" class="img-thumbnail" (mousemove)="getDorIrradiaCoordinate($event)" (click)="lockTheDorIrradiaCordinates()" (window:resize)="onDorIrradiaResize()">-->
+    </div>
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label class="required-field" for="title">4.Como vc descreve essa dor ?</label>
+    <input type="text" style="width:50%" placeholder="pontada/facada, queimação, aperto, pulsante, etc." />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label class="required-field" for="title">5.Em uma escala de 0-10, sendo 0 sem dor e 10 a pior dor que vc ja sentiu, qual é a intensidade dessa dor ?</label>
+    <input type="number" [max]="10" [min]="0" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label class="required-field" for="title">6.A partir do início do sintoma, quanto tempo leva para atingir o pico de dor ? (hora:min)</label>
+    <input type="time"  />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label class="required-field" for="title">7.A partir do início do sintoma, quanto tempo leva para a resoluçaõ da dor ? (hora:min)</label>
+    <input type="time"  />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">8.Você já identificou algum fator que desencadeia a dor ?</label>
+    <input type="checkbox"  />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">A.Se sim, qual ?:</label>
+    <input type="text" style="width:50%" placeholder="Fator Agravante" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">9.Você já identificou algum fator que melhora a dor ?</label>
+    <input type="checkbox" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="title">A.Se sim, qual ?</label>
+    <input type="text" style="width:50%" placeholder="Fator Atenuante" />
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label for="flexSwitchCheckDefault">10.Durante a crise você apresenta algum sintoma além da dor ?</label>
+    <input type="checkbox" />
+
+  </div>
+  <div class="mt-2 form-check form-switch">
+
+    <label class="form-check-label" for="flexSwitchCheckDefault">Se sim, seria náusea/vômito ?</label>
+    <input class="form-check-input" type="checkbox" />
+
+  </div>
+  <div class="mt-2 form-check form-switch">
+
+    <label class="form-check-label" for="flexSwitchCheckDefault">Se sim, seria maior sensibilidade à luz ou ao som</label>
+    <input class="form-check-input" type="checkbox" />
+
+  </div>
+  <div class="mt-2 form-check form-switch">
+
+    <label class="form-check-label" for="flexSwitchCheckDefault">Se sim, seria a visão de pontos brilhantes ou manchas escuras</label>
+    <input class="form-check-input" type="checkbox"  />
+
+  </div>
+  <div class="form-group mt-2 row">
+    <label for="title">11.Caso sua dor de cabeça se enquadre em algum dos critérios a seguir, marque as alternativas correspondentes (pode marcar quantas forem adequadas):</label>
+    <div class="col-md-6 mt-2 ">
+      <div class="form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Dura entre 4-72h sem tratamento</label>
+        <input class="form-check-input" type="checkbox" />
+      </div>
+      <div class="col-md-6 mt-2 form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">É em apenas metade da cabeça</label>
+        <input class="form-check-input" type="checkbox" />
+      </div>
+      <div class="col-md-6 mt-2 form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Caráter pulsátil</label>
+        <input class="form-check-input" type="checkbox" />
+      </div>
+      <div class="col-md-6 mt-2 form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Intensidade moderada ou forte</label>
+        <input class="form-check-input" type="checkbox"/>
+      </div>
+      <div class="mt-2 form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Inicia ou piora com atividades físicas rotineiras (ex.: caminhar ou ir para a academia)</label>
+        <input class="form-check-input" type="checkbox"/>
+      </div>
+
+      <div class="mt-2 form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Durante a crise apresenta náusea ou vômito</label>
+        <input class="form-check-input" type="checkbox"/>
+      </div>
+      <div class="mt-2 form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Durante a crise apresenta sensibilidade à luz ou ao som</label>
+        <input class="form-check-input" type="checkbox"/>
+      </div>
+      <div class="mt-2 form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Antes da crise apresentou alterações como pontos claros ou escuros na visão, alterações sensoriais ou motoras – essas alterações desaparecem após a crise de dor</label>
+        <input class="form-check-input" type="checkbox" />
+      </div>
+    </div>
+    <div class="col-md-6 mt-2 ">
+      <div class="form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Dura entre 30min a 7 dias</label>
+        <input class="form-check-input" type="checkbox"/>
+      </div>
+      <div class="col-md-6 mt-2 form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">É bilateral</label>
+        <input class="form-check-input" type="checkbox"/>
+      </div>
+
+      <div class="col-md-6 mt-2 form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Caráter em pressão ou aperto</label>
+        <input class="form-check-input" type="checkbox"/>
+      </div>
+
+      <div class="mt-2 form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Intensidade frada ou moderada</label>
+        <input class="form-check-input" type="checkbox"/>
+      </div>
+
+      <div class="mt-2 form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Não inicia ou piora com atividades rotineiras (ex.: caminhar ou ir para a academia)</label>
+        <input class="form-check-input" type="checkbox" />
+      </div>
+
+      <div class="mt-2 form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Não apresenta náusea ou vômito durante as crises</label>
+        <input class="form-check-input" type="checkbox"/>
+      </div>
+
+      <div class="mt-2 form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Não apresenta sensibilidade à luz durante as crises</label>
+        <input class="form-check-input" type="checkbox"/>
+      </div>
+
+      <div class="mt-2 form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Não apresenta sensibilidade ao som durante as crises</label>
+        <input class="form-check-input" type="checkbox"/>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,100 @@
+<h2>INVENTÁRIO BREVE DE DOR</h2>
+<form [formGroup]="addQuestionario">
+  <div class="form-group mt-2">
+
+    <label class="required-field" for="title">1.Clique no local de dor</label>
+
+    <div style="position:relative">
+      <img style="width:2.5%;position: absolute" class="marker_O" [hidden]="showTheDor" [ngStyle]="setDorView()" src="/../assets/imagens/O_mark.png" id="marker" />
+      <img src="/../assets/imagens/male_female_body.jpg" class="img-thumbnail" (mousemove)="getDorCoordinate($event)" (window:resize)="onDorResize()" (click)="lockTheDorCordinates()" />
+    </div>
+  </div>
+
+  <div class="form-group mt-2">
+
+    <label class="required-field" for="title">2.Clique no local de dor mais intensa</label>
+
+    <div style="position:relative">
+      <img style="width:2%; position: absolute;" class="marker_X" [hidden]="showTheMaiorDor" [ngStyle]="setMaiorDorView()" src="/../assets/imagens/X_mark.png" id="marker" />
+      <img src="/../assets/imagens/male_female_body.jpg" class="img-thumbnail" (mousemove)="getMaiorDorCoordinate($event)" (click)="lockTheMaiorDorCordinates()" (window:resize)="onMaiorDorResize()">
+    </div>
+  </div>
+  <div class="form-group mt-2">
+
+    <label class="required-field" for="title">3.De 0 a 10, qual representa melhor a dor mais intesa que vc sentiu nas últimas 24h ?</label>
+    <input type="number" [max]="10" [min]="0" formControlName="MaiorDor24h"/>
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label class="required-field" for="title">4.De 0 a 10, qual representa melhor a dor menos intesa que vc sentiu nas últimas 24h ?</label>
+    <input  type="number" [max]="10" [min]="0" formControlName="MenorDor24h"/>
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label class="required-field" for="title">5.De 0 a 10, qual representa melhor a dor em geral que vc sentiu nas últimas 24h ?</label>
+    <input type="number" [max]="10" [min]="0" formControlName="GeralDor24h"/>
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label class="required-field" for="title">6.De 0 a 10, qual representa melhor a dor media no presente momento ?</label>
+    <input  type="number" [max]="10" [min]="0" formControlName="DorMomento"/>
+
+  </div>
+  <div class="form-group mt-2">
+
+    <label class="required-field" for="title">7.Quais são os tratamentos farmacológicos que você toma contra a dor</label>
+    <input type="text" style="width:70% " formControlName="TratamentoDor" placeholder="tratamentos farmacológicos" />
+
+  </div>
+  <div class="row">
+    <div class="form-group mt-2"> <label for="title">8.De 0 a 10, qual representa melhor a maneira em que a dor interferiu, na útima semana...</label></div>
+    <div class="col-md-6">
+      <div class="mt-2">
+
+        <label class="required-field" for="title">A. em atividades gerais ?</label>
+        <input type="number" [max]="10" [min]="0" formControlName="DorAtividadeGeral"/>
+
+      </div>
+      <div class="form-group mt-2">
+
+        <label class="required-field" for="title">B. no seu humor ?</label>
+        <input type="number" [max]="10" [min]="0" formControlName="DorHumor"/>
+
+      </div>
+      <div class="form-group mt-2">
+
+        <label class="required-field" for="title">C. na capacidade de andar ?</label>
+        <input type="number" [max]="10" [min]="0" formControlName="DorLocomocao"/>
+
+      </div>
+      <div class="form-group mt-2">
+
+        <label class="required-field" for="title">D. trabalhos habituais ?</label>
+        <input type="number" [max]="10" [min]="0" formControlName="DorTrabalho"/>
+
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group mt-2">
+
+        <label class="required-field" for="title">E. na realação com os outro ?</label>
+        <input type="number" [max]="10" [min]="0" formControlName="DorRelacionamento"/>
+
+      </div>
+      <div class="form-group mt-2">
+
+        <label class="required-field" for="title">F. no sono ?</label>
+        <input type="number" [max]="10" [min]="0" formControlName="DorSono"/>
+
+      </div>
+      <div class="form-group mt-2">
+
+        <label class="required-field" for="title">G. no gosto pela vida ?</label>
+        <input type="number" [max]="10" [min]="0" formControlName="DorVida"/>
+      </div>
+    </div>
+  </div>
+</form>

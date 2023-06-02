@@ -8,6 +8,6 @@ import { Questionario } from '../../models/questionario';
 })
 export class QuestDetailsComponent {
 
-  @Input('Allquestionarios') questionarios!: Questionario[];
+  @Input() quest!: Questionario;
 
 }
