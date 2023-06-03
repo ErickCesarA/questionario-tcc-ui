@@ -1,16 +1,417 @@
 <body class="body" *ngIf="quest">
-  <form>
-    <div><input [(ngModel)]="quest.nome" class="form-control" name="nome"/></div>
     <div class="quest_body">
-      <app-quest-dor-details></app-quest-dor-details>
-    </div>
-    <div class="quest_body mt-2">
-      <app-quest-pessol-details></app-quest-pessol-details>
-    </div>
-    <div class="quest_body mt-2">
-      <app-quest-cafeleia-details></app-quest-cafeleia-details>
-    </div>
-    <button (click)="quest" class="btn-close" disabled aria-label="Close"></button>
-  </form>
+      <h2>INVENTÁRIO BREVE DE DOR</h2>
+      <form>
+        <div class="form-group mt-2">
 
+          <label class="required-field" for="title">1.Clique no local de dor</label>
+
+          <div style="position:relative">
+            <img style="width:2.5%;position: absolute" class="marker_O_dor" [hidden]="showTheDor" [ngStyle]="setDorView()" src="/../assets/imagens/O_mark.png" id="marker" />
+            <img src="/../assets/imagens/male_female_body.jpg" class="img-thumbnail"/>
+          </div>
+        </div>
+
+        <div class="form-group mt-2">
+
+          <label class="required-field" for="title">2.Clique no local de dor mais intensa</label>
+
+          <div style="position:relative">
+            <img style="width:2%; position: absolute;" class="marker_X" [hidden]="showTheMaiorDor" [ngStyle]="setMaiorDorView()" src="/../assets/imagens/X_mark.png" id="marker" />
+            <img src="/../assets/imagens/male_female_body.jpg" class="img-thumbnail" />
+        </div>
+          </div>
+        <div class="form-group mt-2">
+
+          <label class="required-field" for="title">3.De 0 a 10, qual representa melhor a dor mais intesa que vc sentiu nas últimas 24h ?</label>
+          <input [(ngModel)]="quest.maiorDor24h" name="maiorDor24h" disabled type="number" [max]="10" [min]="0" />
+
+        </div>
+        <div class="form-group mt-2">
+
+          <label class="required-field" for="title">4.De 0 a 10, qual representa melhor a dor menos intesa que vc sentiu nas últimas 24h ?</label>
+          <input [(ngModel)]="quest.menorDor24h" name="menorDor24h" disabled type="number" [max]="10" [min]="0" />
+
+        </div>
+        <div class="form-group mt-2">
+
+          <label class="required-field" for="title">5.De 0 a 10, qual representa melhor a dor em geral que vc sentiu nas últimas 24h ?</label>
+          <input [(ngModel)]="quest.geralDor24h" name="geralDor24h" disabled type="number" [max]="10" [min]="0" />
+
+        </div>
+        <div class="form-group mt-2">
+
+          <label class="required-field" for="title">6.De 0 a 10, qual representa melhor a dor media no presente momento ?</label>
+          <input [(ngModel)]="quest.dorMomento" name="dorMomento" disabled type="number" [max]="10" [min]="0" />
+
+        </div>
+        <div class="form-group mt-2">
+
+          <label class="required-field" for="title">7.Quais são os tratamentos farmacológicos que você toma contra a dor</label>
+          <input [(ngModel)]="quest.tratamentoDor" name="tratamentoDor" disabled type="text" style="width:70% " placeholder="tratamentos farmacológicos" />
+
+        </div>
+        <div class="row">
+          <div class="form-group mt-2"> <label for="title">8.De 0 a 10, qual representa melhor a maneira em que a dor interferiu, na útima semana...</label></div>
+          <div class="col-md-6">
+            <div class="mt-2">
+
+              <label class="required-field" for="title">A. em atividades gerais ?</label>
+              <input [(ngModel)]="quest.dorAtividadeGeral" name="dorAtividadeGeral" disabled type="number" [max]="10" [min]="0" />
+
+            </div>
+            <div class="form-group mt-2">
+
+              <label class="required-field" for="title">B. no seu humor ?</label>
+              <input [(ngModel)]="quest.dorHumor" name="dorHumor" disabled type="number" [max]="10" [min]="0" />
+
+            </div>
+            <div class="form-group mt-2">
+
+              <label class="required-field" for="title">C. na capacidade de andar ?</label>
+              <input [(ngModel)]="quest.dorAtividadeGeral" name="dorAtividadeGeral" disabled type="number" [max]="10" [min]="0" />
+
+            </div>
+            <div class="form-group mt-2">
+
+              <label class="required-field" for="title">D. trabalhos habituais ?</label>
+              <input [(ngModel)]="quest.dorLocomocao" name="dorLocomocao" disabled type="number" [max]="10" [min]="0" />
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group mt-2">
+
+              <label class="required-field" for="title">E. na realação com os outro ?</label>
+              <input [(ngModel)]="quest.dorTrabalho" name="dorTrabalho" disabled type="number" [max]="10" [min]="0" />
+
+            </div>
+            <div class="form-group mt-2">
+
+              <label class="required-field" for="title">F. no sono ?</label>
+              <input [(ngModel)]="quest.dorRelacionamento" name="dorRelacionamento" disabled type="number" [max]="10" [min]="0" />
+
+            </div>
+            <div class="form-group mt-2">
+
+              <label class="required-field" for="title">G. no gosto pela vida ?</label>
+              <input [(ngModel)]="quest.dorSono" name="dorSono" disabled type="number" [max]="10" [min]="0" />
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+    <div class="quest_body mt-2">
+      <h2>QUESTIONÁRIO AOS PARTICIPANTES</h2>
+      <form>
+
+        <div class="form-group mt-2">
+
+          <label class="required-field" for="title">1.Informe seu nome ?</label>
+          <input [(ngModel)]="quest.nome" name="nome" disabled type="text" style="width:30%" placeholder="nome" />
+
+        </div>
+        <div class="form-group mt-2">
+
+          <label class="required-field" for="title">2.Qual é a sua idade em anos ?</label>
+          <input [(ngModel)]="quest.idade" name="idade" disabled type="number" [max]="1000" [min]="0" placeholder="anos" />
+
+        </div>
+
+        <div class="form-group mt-2">
+
+          <label class="required-field" for="title">3.Informe seu telefone ?</label>
+          <input [(ngModel)]="quest.telefone" name="telefone" disabled type="tel" placeholder="(00) 00000-0000" />
+
+        </div>
+        <div class="form-group mt-2">
+
+          <label for="title">4.Com qual gênero você se identifica ?</label>
+          <input [ngModel]="quest.genero" name="genero" type="text" disabled/>
+
+        </div>
+        <div class="form-group  mt-2">
+
+          <label for="title">5.Qual é o seu estado civil atual ?</label>
+          <input [ngModel]="quest.statusCivil" name="statusCivil" type="text" disabled />
+
+        </div>
+        <div class="form-group  mt-2">
+
+          <label for="title">6.Qual a sua etnia ?</label>
+          <input [ngModel]="quest.etinia" name="etinia" type="text" disabled />
+
+        </div>
+        <div class="form-group  mt-2">
+
+          <label for="title">7.Você possui alguma doença crônica ?</label>
+          <input [(ngModel)]="quest.doencaCronica" name="doencaCronica" type="checkbox" disabled />
+
+        </div>
+        <div class="form-group  mt-2">
+
+          <label for="title">A.Se sim, qual doença:</label>
+          <input [(ngModel)]="quest.qualDoenca" name="qualDoenca" type="text" disabled style="width:70%" placeholder="diabetes, hipertensão, hipo e hipertireoidismo, transtornos psiquiátricos, etc." />
+
+        </div>
+        <div class="form-group  mt-2">
+
+          <label class="required-field" for="title">8.Quantas horas de atividade física semanal você pratica em média ?</label>
+          <input [(ngModel)]="quest.horaExercicio" name="horaExercicio" type="text" disabled />
+
+        </div>
+        <div class="form-group  mt-2">
+
+          <label for="title">9.Você faz uso de medicamento continuo ?</label>
+          <input [(ngModel)]="quest.medicamentoContinuo" name="medicamentoContinuo" type="checkbox" disabled />
+
+        </div>
+        <div class="form-group  mt-2">
+
+          <label for="title">A.Se sim, quais medicamentos ?</label>
+          <input [(ngModel)]="quest.qualMedicamento" name="qualMedicamento" disabled type="text" style="width:50%" placeholder="qual medicamento" />
+
+        </div>
+        <div class="form-group  mt-2">
+
+          <label for="title">10.Quantos ml de café você comsome por semana, em média ?</label>
+          <input [(ngModel)]="quest.mlCafeSemana" name="mlCafeSemana" disabled type="number" [max]="1000" [min]="0" />
+
+        </div>
+        <div class="form-group  mt-2">
+
+          <label for="title">11.Você fuma ?</label>
+           <input [(ngModel)]="quest.fuma" name="fuma" type="checkbox" disabled />
+
+        </div>
+        <div class="form-group  mt-2">
+
+          <label for="title">A.Se sim, quantos maços por semana ?</label>
+          <input [(ngModel)]="quest.qtdMacosSemana" name="qtdMacosSemana" disabled type="number" [max]="1000" [min]="0" />
+
+        </div>
+        <div class="form-group  mt-2">
+
+          <label for="title">12.Você comsome álcool?</label>
+          <input [(ngModel)]="quest.bebida" name="bebida" type="checkbox" disabled />
+
+        </div>
+        <div class="form-group  mt-2">
+
+          <label for="title">A.Se sim, quantas vezes durante a semana ?</label>
+          <input [(ngModel)]="quest.bedidasSemana" name="bedidasSemana" disabled type="number" [max]="1000" [min]="0" />
+
+        </div>
+        <div class="form-group  mt-2">
+
+          <label class="required-field" for="title">13.Há quanto tempo você convive com a cafelei ?</label>
+          <input [(ngModel)]="quest.anosCafeleia" name="anosCafeleia" type="text" disabled />
+
+        </div>
+        <div class="form-group  mt-2">
+
+          <label class="required-field" for="title">14.Em média você apresenta quantos episódios por mês ?</label>
+          <input [(ngModel)]="quest.episodiosMes" name="episodiosMes" disabled type="number" [max]="1000" [min]="0" />
+
+        </div>
+        <div class="form-group  mt-2">
+
+          <label for="title">15.Você já buscou algum proficional especializado em dor/cafeleia ?</label>
+          <input  [(ngModel)]="quest.buscaProficional" name="buscaProficional" disabled type="checkbox" />
+
+        </div>
+        <div class="form-group mt-2 form-check form-switch">
+
+          <label class="form-check-label" for="flexSwitchCheckDefault">Se sim, houve melhora dos sintomas ?</label>
+          <input [(ngModel)]="quest.melhora" name="melhora" disabled class="form-check-input" type="checkbox" />
+
+        </div>
+      </form>
+
+
+    </div>
+    <div class="quest_body mt-2">
+      <h2>As próximas perguntas se referem ao útimo episódio de cafeleia vivenciada por você.</h2>
+      <form>
+        <div class="form-group mt-2">
+
+          <label class="required-field" for="title">1.Marque a alternativa que representa a localização mais exata da dor</label>
+          <input [(ngModel)]="quest.localExataDor" name="localExataDor" disabled type="text" />
+
+          <div class="mt-2">
+            <img src="/../assets/imagens/Dor.jpg" class="img-thumbnail">
+          </div>
+
+        </div>
+
+        <div class="form-group mt-2">
+
+          <label for="title">2.A dor irradia para algun lugar fora das imgens acima ?</label>
+          <input [(ngModel)]="quest.dorIrradia" name="dorIrradia" disabled type="checkbox" />
+
+        </div>
+        <div class="form-group mt-2">
+
+          <label for="title">3.Se sim, qual ?</label>
+
+          <div style="position:relative">
+            <img style="width:5%;position: absolute" class="marker_O_dorIrradia" [hidden]="showTheDorIrradia" [ngStyle]="setDorIrradiaView()" src="/../assets/imagens/O_mark.png" id="marker" />
+            <img src="/../assets/imagens/Dor_Irradia.jpg" class="img-thumbnail">
+          </div>
+
+        </div>
+        <div class="form-group mt-2">
+
+          <label class="required-field" for="title">4.Como vc descreve essa dor ?</label>
+          <input [(ngModel)]="quest.discricaoDor" name="discricaoDor" disabled type="text" style="width:50%" placeholder="pontada/facada, queimação, aperto, pulsante, etc." />
+
+        </div>
+        <div class="form-group mt-2">
+
+          <label class="required-field" for="title">5.Em uma escala de 0-10, sendo 0 sem dor e 10 a pior dor que vc ja sentiu, qual é a intensidade dessa dor ?</label>
+          <input [(ngModel)]="quest.itensidadeDor" name="itensidadeDor" disabled type="number" [max]="10" [min]="0" />
+
+        </div>
+        <div class="form-group mt-2">
+
+          <label class="required-field" for="title">6.A partir do início do sintoma, quanto tempo leva para atingir o pico de dor ? (hora:min)</label>
+          <input [(ngModel)]="quest.tempoPicoDor" name="tempoPicoDor" disabled type="time" />
+
+        </div>
+        <div class="form-group mt-2">
+
+          <label class="required-field" for="title">7.A partir do início do sintoma, quanto tempo leva para a resoluçaõ da dor ? (hora:min)</label>
+          <input [(ngModel)]="quest.tempoCrise" name="tempoCrise" disabled type="time" />
+
+        </div>
+        <div class="form-group mt-2">
+
+          <label for="title">8.Você já identificou algum fator que desencadeia a dor ?</label>
+          <input [(ngModel)]="quest.fatorAgravante" name="fatorAgravante" disabled type="checkbox" />
+
+        </div>
+        <div class="form-group mt-2">
+
+          <label for="title">A.Se sim, qual ?:</label>
+          <input [(ngModel)]="quest.qualFatorAgravante" name="qualFatorAgravante" disabled type="text" style="width:50%" placeholder="Fator Agravante" />
+
+        </div>
+        <div class="form-group mt-2">
+
+          <label for="title">9.Você já identificou algum fator que melhora a dor ?</label>
+          <input [(ngModel)]="quest.fatorAtenuante" name="fatorAtenuante" disabled type="checkbox" />
+
+        </div>
+        <div class="form-group mt-2">
+
+          <label for="title">A.Se sim, qual ?</label>
+          <input [(ngModel)]="quest.qualFatorAtenuante" name="qualFatorAtenuante" disabled type="text" style="width:50%" placeholder="Fator Atenuante" />
+
+        </div>
+        <div class="form-group mt-2">
+
+          <label for="flexSwitchCheckDefault">10.Durante a crise você apresenta algum sintoma além da dor ?</label>
+          <input [(ngModel)]="quest.sintomasAlem" name="sintomasAlem" disabled type="checkbox" />
+
+        </div>
+        <div class="mt-2 form-check form-switch">
+
+          <label class="form-check-label" for="flexSwitchCheckDefault">Se sim, seria náusea/vômito ?</label>
+          <input [(ngModel)]="quest.nauseaVomito" name="nauseaVomito" disabled class="form-check-input" type="checkbox" />
+
+        </div>
+        <div class="mt-2 form-check form-switch">
+
+          <label class="form-check-label" for="flexSwitchCheckDefault">Se sim, seria maior sensibilidade à luz ou ao som</label>
+          <input [(ngModel)]="quest.sensiLuzSom" name="sensiLuzSom" disabled class="form-check-input" type="checkbox" />
+
+        </div>
+        <div class="mt-2 form-check form-switch">
+
+          <label class="form-check-label" for="flexSwitchCheckDefault">Se sim, seria a visão de pontos brilhantes ou manchas escuras</label>
+          <input [(ngModel)]="quest.pontBriManchEsc" name="pontBriManchEsc" disabled class="form-check-input" type="checkbox" />
+
+        </div>
+        <div class="form-group mt-2 row">
+          <label for="title">11.Caso sua dor de cabeça se enquadre em algum dos critérios a seguir, marque as alternativas correspondentes (pode marcar quantas forem adequadas):</label>
+          <div class="col-md-6 mt-2 ">
+            <div class="form-check form-switch">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Dura entre 4-72h sem tratamento</label>
+              <input [(ngModel)]="quest.criterio1" name="criterio1" disabled class="form-check-input" type="checkbox" />
+            </div>
+            <div class="col-md-6 mt-2 form-check form-switch">
+              <label class="form-check-label" for="flexSwitchCheckDefault">É em apenas metade da cabeça</label>
+              <input [(ngModel)]="quest.criterio2" name="criterio2" disabled class="form-check-input" type="checkbox" />
+            </div>
+            <div class="col-md-6 mt-2 form-check form-switch">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Caráter pulsátil</label>
+              <input [(ngModel)]="quest.criterio3" name="criterio3" disabled class="form-check-input" type="checkbox" />
+            </div>
+            <div class="col-md-6 mt-2 form-check form-switch">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Intensidade moderada ou forte</label>
+              <input [(ngModel)]="quest.criterio4" name="criterio4" disabled class="form-check-input" type="checkbox" />
+            </div>
+            <div class="mt-2 form-check form-switch">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Inicia ou piora com atividades físicas rotineiras (ex.: caminhar ou ir para a academia)</label>
+              <input [(ngModel)]="quest.criterio5" name="criterio5" disabled class="form-check-input" type="checkbox" />
+            </div>
+
+            <div class="mt-2 form-check form-switch">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Durante a crise apresenta náusea ou vômito</label>
+              <input [(ngModel)]="quest.criterio6" name="criterio6" disabled class="form-check-input" type="checkbox" />
+            </div>
+            <div class="mt-2 form-check form-switch">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Durante a crise apresenta sensibilidade à luz ou ao som</label>
+              <input [(ngModel)]="quest.criterio7" name="criterio7" disabled class="form-check-input" type="checkbox" />
+            </div>
+            <div class="mt-2 form-check form-switch">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Antes da crise apresentou alterações como pontos claros ou escuros na visão, alterações sensoriais ou motoras – essas alterações desaparecem após a crise de dor</label>
+              <input [(ngModel)]="quest.criterio8" name="criterio8" disabled class="form-check-input" type="checkbox" />
+            </div>
+          </div>
+          <div class="col-md-6 mt-2 ">
+            <div class="form-check form-switch">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Dura entre 30min a 7 dias</label>
+              <input [(ngModel)]="quest.criterio9" name="criterio9" disabled class="form-check-input" type="checkbox" />
+            </div>
+            <div class="col-md-6 mt-2 form-check form-switch">
+              <label class="form-check-label" for="flexSwitchCheckDefault">É bilateral</label>
+              <input [(ngModel)]="quest.criterio10" name="criterio10" disabled class="form-check-input" type="checkbox" />
+            </div>
+
+            <div class="col-md-6 mt-2 form-check form-switch">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Caráter em pressão ou aperto</label>
+              <input [(ngModel)]="quest.criterio11" name="criterio11" disabled class="form-check-input" type="checkbox" />
+            </div>
+
+            <div class="mt-2 form-check form-switch">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Intensidade frada ou moderada</label>
+              <input [(ngModel)]="quest.criterio12" name="criterio12" disabled class="form-check-input" type="checkbox" />
+            </div>
+
+            <div class="mt-2 form-check form-switch">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Não inicia ou piora com atividades rotineiras (ex.: caminhar ou ir para a academia)</label>
+              <input [(ngModel)]="quest.criterio13" name="criterio13" disabled class="form-check-input" type="checkbox" />
+            </div>
+
+            <div class="mt-2 form-check form-switch">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Não apresenta náusea ou vômito durante as crises</label>
+              <input [(ngModel)]="quest.criterio14" name="criterio14" disabled class="form-check-input" type="checkbox" />
+            </div>
+
+            <div class="mt-2 form-check form-switch">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Não apresenta sensibilidade à luz durante as crises</label>
+              <input [(ngModel)]="quest.criterio15" name="criterio15" disabled class="form-check-input" type="checkbox" />
+            </div>
+
+            <div class="mt-2 form-check form-switch">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Não apresenta sensibilidade ao som durante as crises</label>
+              <input [(ngModel)]="quest.criterio16" name="criterio16" disabled class="form-check-input" type="checkbox" />
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
 </body>

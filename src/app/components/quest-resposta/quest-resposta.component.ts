@@ -27,8 +27,9 @@ export class QuestRespostaComponent implements OnInit {
       .subscribe((result: Questionario[]) => (this.questionarios = result));
   }
 
-  showDetalhes(quest:Questionario) {
+  showDetalhes(quest: Questionario) {
     this.questsDetalhes = quest;
   }
-
+ 
 }
+

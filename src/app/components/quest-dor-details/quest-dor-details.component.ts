@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Questionario } from '../../models/questionario';
 
 @Component({
   selector: 'app-quest-dor-details',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./quest-dor-details.component.css']
 })
 export class QuestDorDetailsComponent {
+
+  @Input() quest!: Questionario;
 
 }
 

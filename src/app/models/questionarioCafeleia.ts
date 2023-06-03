@@ -1,20 +1,20 @@
 
 export class QuestCafeleia {
   LocalExataDor!: string;
-DorIrradia !: boolean;
+  DorIrradia !: boolean;
   LocacalIrradiaDorX !: number;
   LocacalIrradiaDorY !: number;
   DiscricaoDor!: string;
-ItensidadeDor !: number;
+  ItensidadeDor !: number;
   TempoPicoDor !: string;
   TempoCrise!: string;
   FatorAgravante !: boolean;
   QualFatorAgravante!: string;
   FatorAtenuante !: boolean;
   QualFatorAtenuante!: string;
-SintomasAlem!:boolean;
-NauseaVomito !: boolean;
-SensiLuzSom !: boolean;
+  SintomasAlem!:boolean;
+  NauseaVomito !: boolean;
+  SensiLuzSom !: boolean;
   PontBriManchEsc!: boolean;
   Criterio1 !: boolean;
   Criterio2 !: boolean;

@@ -24,6 +24,29 @@
   color: var(--quest-text-color);
   background-color: var(--main-body-color);
 }
+.quest_body {
+  background-color: var(--quest-body-color);
+  padding: 15px;
+  border-radius: 5px;
+}
+.marker_O_dorIrradia {
+  opacity: 0.5;
+  margin-left: -2.5%;
+  margin-top: -2.5%;
+}
+.marker_O_dor {
+  opacity: 0.5;
+  margin-left: -1.5%;
+  margin-top: -1.5%;
+}
+
+.marker_X {
+  opacity: 0.8;
+  margin-left: -0.9%;
+  margin-top: -0.7%;
+}
+
+
 .required-field::before {
   content: "*";
   color: red;
@@ -57,6 +80,11 @@ select {
   margin-left: 5px;
   border-radius: 5px;
   border: none;
+}
+input[disabled]
+{
+    color:black;
+    
 }
 
 

@@ -5,8 +5,8 @@
     <label class="required-field" for="title">1.Clique no local de dor</label>
 
     <div style="position:relative">
-      <img style="width:2.5%;position: absolute" class="marker_O" [hidden]="showTheDor" [ngStyle]="setDorView()" src="/../assets/imagens/O_mark.png" id="marker" />
-      <img src="/../assets/imagens/male_female_body.jpg" class="img-thumbnail" (mousemove)="getDorCoordinate($event)" (window:resize)="onDorResize()" (click)="lockTheDorCordinates()" />
+      <img style="width:2.5%;position: absolute" class="marker_O_dor" [hidden]="showTheDor" [ngStyle]="setDorView()" src="/../assets/imagens/O_mark.png" id="marker" />
+      <img src="/../assets/imagens/male_female_body.jpg" class="img-thumbnail" (mousemove)="getDorCoordinate($event)" (window:resize)="onDorResize()" (click)="lockTheDorCordinates()" id="dorImg"/>
     </div>
   </div>
 
@@ -16,7 +16,7 @@
 
     <div style="position:relative">
       <img style="width:2%; position: absolute;" class="marker_X" [hidden]="showTheMaiorDor" [ngStyle]="setMaiorDorView()" src="/../assets/imagens/X_mark.png" id="marker" />
-      <img src="/../assets/imagens/male_female_body.jpg" class="img-thumbnail" (mousemove)="getMaiorDorCoordinate($event)" (click)="lockTheMaiorDorCordinates()" (window:resize)="onMaiorDorResize()">
+      <img src="/../assets/imagens/male_female_body.jpg" class="img-thumbnail" (mousemove)="getMaiorDorCoordinate($event)" (click)="lockTheMaiorDorCordinates()" (window:resize)="onMaiorDorResize()" id="maiorDorImg">
     </div>
   </div>
   <div class="form-group mt-2">

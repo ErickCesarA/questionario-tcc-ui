@@ -4,20 +4,20 @@
   <div class="form-group mt-2">
 
     <label class="required-field" for="title">1.Informe seu nome ?</label>
-    <input [(ngModel)]="quest.nome" type="text" style="width:30%" placeholder="nome"/>
+    <input [(ngModel)]="quest.nome" name="nome" disabled type="text" style="width:30%" placeholder="nome"/>
 
   </div>
   <div class="form-group mt-2">
 
     <label class="required-field" for="title">2.Qual é a sua idade em anos ?</label>
-    <input type="number" [max]="1000" [min]="0" placeholder="anos" />
+    <input [(ngModel)]="quest.idade" name="idade" disabled type="number" [max]="1000" [min]="0" placeholder="anos" />
 
   </div>
 
   <div class="form-group mt-2">
 
     <label class="required-field" for="title">3.Informe seu telefone ?</label>
-    <input type="tel" formControlName="Telefone" placeholder="(00) 00000-0000" />
+    <input [(ngModel)]="quest.telefone" name="telefone"  type="tel" placeholder="(00) 00000-0000" />
 
   </div>
   <div class="form-group mt-2">

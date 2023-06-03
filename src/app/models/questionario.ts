@@ -5,9 +5,13 @@ import { QuestPessoal } from "./questionarioPessoal";
 export class Questionario {
 
   localDorX!: number;
-  localDorY!: number;
+  localDorY!: number
+  telaLocalDorX!: number;
+  telaLocalDorY!: number;
   localMaiorDorX!: number;
   localMaiorDorY!: number;
+  telaLocalMaiorDorX!: number;
+  telaLocalMaiorDorY!: number; 
   maiorDor24h!: number;
   menorDor24h!: number;
   geralDor24h!: number;
@@ -43,8 +47,10 @@ export class Questionario {
   melhora!: boolean;
   localExataDor!: string;
   dorIrradia !: boolean;
-  locacalIrradiaDorX !: number;
-  locacalIrradiaDorY !: number;
+  localIrradiaDorX !: number;
+  localIrradiaDorY !: number;
+  telaLocalIrradiaDorX!: number;
+  telaLocalIrradiaDorY!: number;
   discricaoDor!: string;
   itensidadeDor !: number;
   tempoPicoDor !: string;
@@ -57,6 +63,22 @@ export class Questionario {
   nauseaVomito !: boolean;
   sensiLuzSom !: boolean;
   pontBriManchEsc!: boolean;
+  criterio1!: boolean;
+  criterio2!: boolean;
+  criterio3!: boolean;
+  criterio4!: boolean;
+  criterio5!: boolean;
+  criterio6!: boolean;
+  criterio7!: boolean;
+  criterio8!: boolean;
+  criterio9!: boolean;
+  criterio10!: boolean;
+  criterio11!: boolean;
+  criterio12!: boolean;
+  criterio13!: boolean;
+  criterio14!: boolean;
+  criterio15!: boolean;
+  criterio16!: boolean;
 
 
 }

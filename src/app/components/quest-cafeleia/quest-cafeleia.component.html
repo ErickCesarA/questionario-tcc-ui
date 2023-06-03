@@ -24,7 +24,7 @@
     <label for="title">3.Se sim, qual ?</label>
 
     <div style="position:relative">
-      <img style="width:5%;position: absolute" class="marker_O" [hidden]="showTheDorIrradia" [ngStyle]="setDorIrradiaView()" src="/../assets/imagens/O_mark.png" id="marker" />
+      <img style="width:5%;position: absolute" class="marker_O_dorIrradia" [hidden]="showTheDorIrradia" [ngStyle]="setDorIrradiaView()" src="/../assets/imagens/O_mark.png" id="marker" />
       <img src="/../assets/imagens/Dor_Irradia.jpg" class="img-thumbnail" (mousemove)="getDorIrradiaCoordinate($event)" (click)="lockTheDorIrradiaCordinates()" (window:resize)="onDorIrradiaResize()">
     </div>
 

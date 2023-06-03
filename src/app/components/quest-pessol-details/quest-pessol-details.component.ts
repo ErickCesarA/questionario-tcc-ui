@@ -9,7 +9,7 @@ import { Questionario } from '../../models/questionario';
 export class QuestPessolDetailsComponent {
 
   @Input() quest!: Questionario;
-
+  
   constructor() { }
 
   ngOnInit(): void {

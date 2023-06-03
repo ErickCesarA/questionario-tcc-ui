@@ -16,7 +16,7 @@ export class QuestCafeleiaComponent implements OnInit {
   xDorIrradiaLocked!: number;
   yDorIrradiaLocked!: number;
   showTheDorIrradia!: boolean;
-  
+
 
   public MappingLocalExatoDor = MappingLocalExatoDor;
   public itensLocalExatoDor = Object.values(EnumLocalExatoDor).filter(value => typeof value === 'string');
@@ -26,7 +26,7 @@ export class QuestCafeleiaComponent implements OnInit {
   ngOnInit(): void {
 
     this.showTheDorIrradia = true;
-
+   
   }
 
   getDorIrradiaCoordinate(elem: { offsetX: number; offsetY: number; }) {
@@ -37,18 +37,20 @@ export class QuestCafeleiaComponent implements OnInit {
   lockTheDorIrradiaCordinates() {
     this.xDorIrradiaLocked = this.xDorIrradia;
     this.yDorIrradiaLocked = this.yDorIrradia;
-    this.addQuestionario.controls['LocacalIrradiaDorX'].setValue(this.xDorIrradiaLocked);
-    this.addQuestionario.controls['LocacalIrradiaDorY'].setValue(this.yDorIrradiaLocked);
+    this.addQuestionario.controls['LocalIrradiaDorX'].setValue(this.xDorIrradiaLocked);
+    this.addQuestionario.controls['LocalIrradiaDorY'].setValue(this.yDorIrradiaLocked);
+    this.addQuestionario.controls['TelaLocalIrradiaDorX'].setValue(window.innerWidth);
+    this.addQuestionario.controls['TelaLocalIrradiaDorY'].setValue(window.innerHeight);
     this.showTheDorIrradia = false;
   }
   onDorIrradiaResize() {
-    this.showTheDorIrradia = true;
+    this.showTheDorIrradia = false;
   }
   setDorIrradiaView() {
 
     let dorIrradiaView = {
-      'left': this.xDorIrradiaLocked + 'px',
-      'top': this.yDorIrradiaLocked + 'px'
+      'left': (this.xDorIrradiaLocked) + 'px',
+      'top': (this.yDorIrradiaLocked) + 'px'
     };
     return dorIrradiaView;
   }

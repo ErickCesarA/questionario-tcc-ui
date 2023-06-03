@@ -1,4 +1,4 @@
-<body class="body">
+<!--<body class="body">
   <table class="table resposta_box">
     <thead>
       <tr>
@@ -9,14 +9,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let questionario of questionarios">
-        <td>{{ questionario.nome}}</td>
-        <td>{{ questionario.telefone }}</td>
-        <td>{{ questionario.idade }}</td>
-        <td>{{ questionario.genero }}</td>
-        <td><button type="button" (click)="showDetalhes(questionario)" class="btn btn-warning btn-sml">+</button></td>
-      </tr>
-    </tbody>
+    <tr *ngFor="let questionario of questionarios">
+      <td><div class="dados_box">{{ questionario.nome}}</div></td>
+      <td><div class="dados_box">{{ questionario.telefone }}</div></td>
+      <td><div class="dados_box">{{ questionario.idade }}</div></td>
+      <td><div class="dados_box">{{ questionario.genero }}</div></td>
+      <app-quest-details [quest]="questionario"></app-quest-details>
+    </tr>
+  </tbody>
   </table>
-  <app-quest-details [quest]="questsDetalhes"></app-quest-details>
-</body>
+</body>-->
+<div *ngFor="let questionario of questionarios">
+  <app-quest-details [quest]="questionario"></app-quest-details>
+</div>
+
