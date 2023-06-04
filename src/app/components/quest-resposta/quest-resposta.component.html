@@ -1,25 +1,29 @@
-<!--<body class="body">
-  <table class="table resposta_box">
-    <thead>
-      <tr>
-        <th scope="col">Nome</th>
-        <th scope="col">Telefone</th>
-        <th scope="col">Idade</th>
-        <th scope="col">Genero</th>
-      </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let questionario of questionarios">
-      <td><div class="dados_box">{{ questionario.nome}}</div></td>
-      <td><div class="dados_box">{{ questionario.telefone }}</div></td>
-      <td><div class="dados_box">{{ questionario.idade }}</div></td>
-      <td><div class="dados_box">{{ questionario.genero }}</div></td>
-      <app-quest-details [quest]="questionario"></app-quest-details>
-    </tr>
-  </tbody>
-  </table>
-</body>-->
-<div *ngFor="let questionario of questionarios">
-  <app-quest-details [quest]="questionario"></app-quest-details>
-</div>
+<body class="body">
+  <div class="row">
+    <div class="col-md-4">
+      <table class="table resposta_box">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Idade</th>
+            <th scope="col">Genero</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let questionario of questionarios">
+            <td><div class="dados_box">{{ questionario.nome}}</div></td>
+            <td><div class="dados_box">{{ questionario.telefone }}</div></td>
+            <td><div class="dados_box">{{ questionario.idade }}</div></td>
+            <td><div class="dados_box">{{ questionario.genero }}</div></td>
+            <td><button (click)="showDetalhes(questionario)" class="btn btn-info">+</button></td>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-8">
+      <app-quest-details [quest]="questsDetalhes"></app-quest-details>
+    </div>
+  </div>
+</body>
+
 

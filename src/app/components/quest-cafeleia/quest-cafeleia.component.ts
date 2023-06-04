@@ -13,6 +13,8 @@ export class QuestCafeleiaComponent implements OnInit {
  
   xDorIrradia!: number;
   yDorIrradia!: number;
+  DorIrradiaImgLarg!: number;
+  DorIrradiaImgAlt!: number;
   xDorIrradiaLocked!: number;
   yDorIrradiaLocked!: number;
   showTheDorIrradia!: boolean;
@@ -35,12 +37,17 @@ export class QuestCafeleiaComponent implements OnInit {
   }
 
   lockTheDorIrradiaCordinates() {
+
+    var dorImg = document.querySelector("#dorIrradiaImg");
+    this.DorIrradiaImgLarg = dorImg!.clientWidth;
+    this.DorIrradiaImgAlt = dorImg!.clientHeight;
+
     this.xDorIrradiaLocked = this.xDorIrradia;
     this.yDorIrradiaLocked = this.yDorIrradia;
     this.addQuestionario.controls['LocalIrradiaDorX'].setValue(this.xDorIrradiaLocked);
     this.addQuestionario.controls['LocalIrradiaDorY'].setValue(this.yDorIrradiaLocked);
-    this.addQuestionario.controls['TelaLocalIrradiaDorX'].setValue(window.innerWidth);
-    this.addQuestionario.controls['TelaLocalIrradiaDorY'].setValue(window.innerHeight);
+    this.addQuestionario.controls['TelaLocalIrradiaDorX'].setValue(this.DorIrradiaImgLarg);
+    this.addQuestionario.controls['TelaLocalIrradiaDorY'].setValue(this.DorIrradiaImgAlt);
     this.showTheDorIrradia = false;
   }
   onDorIrradiaResize() {

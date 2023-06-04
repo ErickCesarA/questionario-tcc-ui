@@ -14,6 +14,8 @@ export class QuestDorComponent implements OnInit {
 
   xDor!: number;
   yDor!: number;
+  DorImgLarg!: number;
+  DorImgAlt!: number;
   xDorLocked!: number;
   yDorLocked!: number;
   showTheDor!: boolean;
@@ -21,19 +23,19 @@ export class QuestDorComponent implements OnInit {
 
   xMaiorDor!: number;
   yMaiorDor!: number;
+  MaiorDorImgLarg!: number;
+  MaiorDorImgAlt!: number;
   xMaiorDorLocked!: number;
   yMaiorDorLocked!: number;
   showTheMaiorDor!: boolean;
 
- 
-  
-  
   constructor() { }
 
   ngOnInit(): void {
 
     this.showTheDor = true
     this.showTheMaiorDor = true;
+
 
   }
 
@@ -44,17 +46,15 @@ export class QuestDorComponent implements OnInit {
   lockTheDorCordinates() {
 
     var dorImg = document.querySelector("#dorImg");
-    var DorImgLarg = dorImg!.clientWidth;
-    var DorImgAlt = dorImg!.clientHeight;
-    console.log(DorImgLarg);
-    console.log(DorImgAlt);
+    this.DorImgLarg = dorImg!.clientWidth;
+    this.DorImgAlt = dorImg!.clientHeight;
 
     this.xDorLocked = this.xDor;
     this.yDorLocked = this.yDor;
     this.addQuestionario.controls['LocalDorX'].setValue(this.xDorLocked);
     this.addQuestionario.controls['LocalDorY'].setValue(this.yDorLocked);
-    this.addQuestionario.controls['TelaLocalDorX'].setValue(DorImgLarg);
-    this.addQuestionario.controls['TelaLocalDorY'].setValue(DorImgAlt);
+    this.addQuestionario.controls['TelaLocalDorX'].setValue(this.DorImgLarg);
+    this.addQuestionario.controls['TelaLocalDorY'].setValue(this.DorImgAlt);
     this.showTheDor = false;
 
   }
@@ -77,17 +77,15 @@ export class QuestDorComponent implements OnInit {
   lockTheMaiorDorCordinates() {
 
     var maiorDorImg = document.querySelector("#maiorDorImg")
-    var maiorDorImgLarg = maiorDorImg!.clientWidth
-    var maiorDorImgAlt = maiorDorImg!.clientHeight
-    console.log(maiorDorImgLarg);
-    console.log(maiorDorImgAlt);
+    this.MaiorDorImgLarg = maiorDorImg!.clientWidth
+    this.MaiorDorImgAlt = maiorDorImg!.clientHeight
 
     this.xMaiorDorLocked = this.xMaiorDor;
     this.yMaiorDorLocked = this.yMaiorDor;
     this.addQuestionario.controls['LocalMaiorDorX'].setValue(this.xMaiorDorLocked);
     this.addQuestionario.controls['LocalMaiorDorY'].setValue(this.yMaiorDorLocked);
-    this.addQuestionario.controls['TelaLocalMaiorDorX'].setValue(maiorDorImgLarg);
-    this.addQuestionario.controls['TelaLocalMaiorDorY'].setValue(maiorDorImgAlt);
+    this.addQuestionario.controls['TelaLocalMaiorDorX'].setValue(this.MaiorDorImgLarg);
+    this.addQuestionario.controls['TelaLocalMaiorDorY'].setValue(this.MaiorDorImgAlt);
     this.showTheMaiorDor = false;
   }
   onMaiorDorResize() {

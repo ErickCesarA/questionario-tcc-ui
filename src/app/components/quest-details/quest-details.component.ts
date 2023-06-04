@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Questionario } from '../../models/questionario';
+import { EventEmitterService } from '../../services/event-emitter.service';
+import { QuestServiceService } from '../../services/quest-service.service';
 
 @Component({
   selector: 'app-quest-details',
@@ -9,37 +11,51 @@ import { Questionario } from '../../models/questionario';
 export class QuestDetailsComponent {
 
   @Input() quest!: Questionario;
-  questionario!: Questionario;
+  questionarios: Questionario[] = [];
 
   xDorLocked!: number;
   yDorLocked!: number;
+  DorImgLarg!: number;
+  DorImgAlt!: number;
   showTheDor!: boolean;
 
   xMaiorDorLocked!: number;
   yMaiorDorLocked!: number;
+  MaiorDorImgLarg!: number;
+  MaiorDorImgAlt!: number;
   showTheMaiorDor!: boolean;
 
-  showTheDorIrradia!: boolean
   xDorIrradiaLocked!: number;
   yDorIrradiaLocked!: number;
-  
+  DorIrradiaImgLarg!: number;
+  DorIrradiaImgAlt!: number;
+  showTheDorIrradia!: boolean
+
+  constructor(private eventEmitterService: EventEmitterService) { }
 
   ngOnInit(): void {
 
-    this.lockTheDorIrradiaCordinates();
-    this.lockTheDorCordinates();
-    this.lockTheMaiorDorCordinates();
-  
+    this.quest = new Questionario;
+    if (this.eventEmitterService.subsVar == undefined) {
+      this.eventEmitterService.subsVar = this.eventEmitterService.
+        invokeDorLockFunction.subscribe(() => {
+          this.lockTheDorCordinates();
+          this.lockTheMaiorDorCordinates();
+          this.lockTheDorIrradiaCordinates();
+        })
+    };
 
   }
-  lockTheDorCordinates() {
-    this.xDorLocked = (this.quest.localDorX / this.quest.telaLocalDorX) * window.innerWidth;
-    this.yDorLocked = (this.quest.localDorY / this.quest.telaLocalDorY) * window.innerHeight;
-    this.showTheDor = false;
-    console.log(this.xDorLocked)
-    console.log(this.yDorLocked)
-    console.log(this.yDorLocked)
 
+  lockTheDorCordinates() {
+
+    var dorImg = document.querySelector("#dorImg");
+    this.DorImgLarg = dorImg!.clientWidth;
+    this.DorImgAlt = dorImg!.clientHeight;
+
+    this.xDorLocked = (this.quest.localDorX / this.quest.telaLocalDorX) * this.DorImgLarg;
+    this.yDorLocked = (this.quest.localDorY / this.quest.telaLocalDorY) * this.DorImgAlt;
+ 
   }
  
   setDorView() {
@@ -52,11 +68,15 @@ export class QuestDetailsComponent {
   }
 
   lockTheMaiorDorCordinates() {
-    this.xMaiorDorLocked = (this.quest.localMaiorDorX / this.quest.telaLocalMaiorDorX) * window.innerWidth;
-    this.yMaiorDorLocked = (this.quest.localMaiorDorY / this.quest.telaLocalMaiorDorY) * window.innerHeight;
+
+    var maiorDorImg = document.querySelector("#maiorDorImg")
+    this.MaiorDorImgLarg = maiorDorImg!.clientWidth
+    this.MaiorDorImgAlt = maiorDorImg!.clientHeight
+    
+    this.xMaiorDorLocked = (this.quest.localMaiorDorX / this.quest.telaLocalMaiorDorX) * this.MaiorDorImgLarg;
+    this.yMaiorDorLocked = (this.quest.localMaiorDorY / this.quest.telaLocalMaiorDorY) * this.MaiorDorImgAlt;
     this.showTheMaiorDor = false;
-    console.log(this.xMaiorDorLocked)
-    console.log(this.yMaiorDorLocked)
+    
   }
  
   setMaiorDorView() {
@@ -71,11 +91,15 @@ export class QuestDetailsComponent {
 
 
   lockTheDorIrradiaCordinates() {
-    this.xDorIrradiaLocked = (this.quest.localIrradiaDorX / this.quest.telaLocalIrradiaDorX) * window.innerWidth;
-    this.yDorIrradiaLocked = (this.quest.localIrradiaDorY / this.quest.telaLocalIrradiaDorY) * window.innerHeight;
+
+    var maiorDorImg = document.querySelector("#dorIrradiaImg")
+    this.DorIrradiaImgLarg = maiorDorImg!.clientWidth
+    this.DorIrradiaImgAlt = maiorDorImg!.clientHeight
+
+    this.xDorIrradiaLocked = (this.quest.localIrradiaDorX / this.quest.telaLocalIrradiaDorX) * this.DorIrradiaImgLarg;
+    this.yDorIrradiaLocked = (this.quest.localIrradiaDorY / this.quest.telaLocalIrradiaDorY) * this.DorIrradiaImgAlt;
     this.showTheDorIrradia = false;
-    console.log(this.xDorIrradiaLocked)
-    console.log(this.yDorIrradiaLocked)
+   
   }
   setDorIrradiaView() {
 

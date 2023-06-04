@@ -17,6 +17,7 @@ import { QuestDetailsComponent } from './components/quest-details/quest-details.
 import { QuestPessolDetailsComponent } from './components/quest-pessol-details/quest-pessol-details.component';
 import { QuestDorDetailsComponent } from './components/quest-dor-details/quest-dor-details.component';
 import { QuestCafeleiaDetailsComponent } from './components/quest-cafeleia-details/quest-cafeleia-details.component';
+import { EventEmitterService } from './services/event-emitter.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { QuestCafeleiaDetailsComponent } from './components/quest-cafeleia-detai
     AppRoutingModule,
 
   ],
-  providers: [],
+  providers: [EventEmitterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
